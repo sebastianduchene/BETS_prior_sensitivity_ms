@@ -68,6 +68,28 @@ Pending.
 
 
 \textbf{Outline}
+
+\textbf{\textcolor{blue}{Key points for Results section - 28 / 02 / 2024}}
+\begin{itemize}
+	\item The impact of the tree prior and hyperpriors on model selection. Here show the polygons and tables. Pow is particularly interesting because the exponential prior on $\Phi$ does not support temporal signal. \textbf{Result: Priors obviously impact marginal   likelihoods, but sometimes also model choice.}
+        \subitem \textcolor{red}{To do: Make figure with polygons for all data sets, add legends, etc... Also make latex table with marginal likelihoods, but only those that have sufficient ESS.}
+    
+	\item Show clock rate (ucld.mean and clock.rate), root height, tree length, and coefficient of rate variation (only for the relaxed clock) distributions under each clock model and prior. \textbf{Result: Estimates of evolutionary rates and times are generally robust to the tree prior even if the marginal likelihood is not}
+        \subitem \textcolor{red}{To do: Plot densities of clock rates, root height, tree length, coefficient of rate variation. One panel per data set, show density for the three priors and the same colours as the fig above.}
+	
+    \item Simulations \textbf{\textcolor{red}{Pending for now} - does the tree prior impact the accuracy to detect temporal signal?}
+        \subitem \textcolor{red}{To do: This is where the simulations come in. Think of visuals here. Probably best displayed as tables? We can also just have plots of error bars per analysis to show coverage of key parameters...}
+    
+	\item Why does the prior on $\Phi$ impact temporal signal? Because it is linked to tree length and to the clock rate via the coalescent and the CTMC reference prior. Here show pairs plots for the root height, $\Phi$, tree length, clock rate \textbf{Result: Some parameters in the Bayesian hierarchical model are naturally correlated, the marginal prior is not obvious, but can be easily inspected}
+            \subitem \textcolor{red}{To do: we should do pairwise plots to show the association of the parameters above ($\Phi$, tree length, tree height, clock rate). This is just sampling from the prior, which I have done. Can we do this for the three priors on $\Phi$, using the colours above?}   
+        
+	\item Inspecting the marginal prior is important and should be conducted prior to tests of temporal signal. For example, including monophyletic constraints, and other prior information can impact temporal signal. 
+	\item Prior sensitivity is also important to assess the robustness of the estimates.
+ 
+\end{itemize}
+
+\Large{\textbf{\textcolor{blue}{General outline and key points}}}
+
 \begin{itemize}
 	\item Talk about tests of temporal signal
 	\item The role of BETS
@@ -90,15 +112,7 @@ Pending.
 	
 \end{itemize}
 
-\textbf{\textcolor{blue}{Key points for Results section - 28 / 02 / 2024}}
-\begin{itemize}
-	\item The impact of the tree prior and hyperpriors on model selection. Here show the polygons and tables. Pow is particularly interesting because the exponential prior on $\Phi$ does not support temporal signal. \textbf{Result: Priors obviously impact marginal likelihoods, but sometimes also model choice}
-	\item Show clock rate (ucld.mean and clock.rate) and root height distributions under each clock model and prior. \textbf{Result: Estimates of evolutionary rates and times are generally robust to the tree prior even if the marginal likelihood is not}
-	\item Simulations \textbf{\textcolor{red}{Pending for now} - does the tree prior impact the accuracy to detect temporal signal?}
-	\item Why does the prior on $\Phi$ impact temporal signal? Because it is linked to tree length and to the clock rate via the coalescent and the CTMC reference prior. Here show pairs plots for the root height, $\Phi$, tree length, clock rate \textbf{Result: Some parameters in the Bayesian hierarchical model are naturally correlated, the marginal prior is not obvious, but can be easily inspected}
-	\item Inspecting the marginal prior is important and should be conducted prior to tests of temporal signal. For example, including monophyletic constraints, and other prior information can impact temporal signal. 
-	\item Prior sensitivity is also important to assess the robustness of the estimates.
-\end{itemize}
+
 
 \textbf{Prior sensitivity to run (21 Feb)}
 \begin{itemize}
