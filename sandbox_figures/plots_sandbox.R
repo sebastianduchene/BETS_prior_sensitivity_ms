@@ -1,7 +1,7 @@
 library(RColorBrewer)
 pal <- brewer.pal(3, "Set1")
 
-setwd("~/Dropbox/projects_WORKING/BETS_prior_sensitivity/ms_files/sandbox_figures/")
+setwd("~/Dropbox/projects_WORKING/BETS_prior_sensitivity/BETS_prior_sensitivity_ms/sandbox_figures")
 
 mle_calculations <- read.table("BETS_empirical.csv", head = T, sep = ",")
 head(mle_calculations)
@@ -33,6 +33,7 @@ gamma_mles <- rescale_mles(gamma_mles)
 logn_mles <- mle_calculations$Marginal.Likelihood[grep("trep.+logn", mle_calculations$Name)]
 logn_mles <- rescale_mles(logn_mles)
 
+pdf("test_export_fig.pdf", useDingbats = FALSE, width = 7, height = 5)
 par(mar = c(4, 7, 4, 6))
 plot(0, 0, ylim = c(-12, 12), xlim = c(-12, 13), type = "n", bty = "n", 
      yaxt = "n", xaxt = "n", ylab = "", xlab = "", 
@@ -53,4 +54,5 @@ text(c(-11, 11, 11, -11),
 plot_polygon(exp_mles, pal[1])
 plot_polygon(gamma_mles, pal[2])
 plot_polygon(logn_mles, pal[3])
+dev.off()
 
