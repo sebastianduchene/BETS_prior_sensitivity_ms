@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.15)  4 APR 2024 16:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.15)  4 APR 2024 16:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -568,16 +568,25 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+<sandbox_figures/polygon_plot.pdf, id=28, 433.62pt x 578.16pt>
+File: sandbox_figures/polygon_plot.pdf Graphic file (type pdf)
+<use sandbox_figures/polygon_plot.pdf>
+Package pdftex.def Info: sandbox_figures/polygon_plot.pdf  used on input line 2
+69.
+(pdftex.def)             Requested size: 398.33858pt x 531.14613pt.
 
-LaTeX Warning: Citation `bib3' on page 3 undefined on input line 290.
+Overfull \hbox (18.92108pt too wide) in paragraph at lines 269--271
+[][] 
+ []
 
+[2] [3 <./sandbox_figures/polygon_plot.pdf>]
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: Citation `bib3' on page 4 undefined on input line 300.
 
-[3] (./plos_latex_template.bbl [4]) 
+[4] (./plos_latex_template.bbl [5]) 
 AED: lastpage setting LastPage
-[5] (./plos_latex_template.aux)
+[6] (./plos_latex_template.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -585,13 +594,13 @@ Package rerunfilecheck Info: File `plos_latex_template.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 14788 strings out of 478287
- 234874 string characters out of 5849289
- 579870 words of memory out of 5000000
- 32672 multiletter control sequences out of 15000+600000
+ 14799 strings out of 478287
+ 235198 string characters out of 5849289
+ 581370 words of memory out of 5000000
+ 32679 multiletter control sequences out of 15000+600000
  476488 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,14n,76p,1153b,483s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,14n,76p,1153b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
@@ -606,10 +615,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf/fonts/
 type1/public/cm-super/sfrm1000.pfb>
-Output written on plos_latex_template.pdf (5 pages, 171200 bytes).
+Output written on plos_latex_template.pdf (6 pages, 179537 bytes).
 PDF statistics:
- 157 PDF objects out of 1000 (max. 8388607)
- 120 compressed objects within 2 object streams
- 37 named destinations out of 1000 (max. 500000)
- 26625 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 170 PDF objects out of 1000 (max. 8388607)
+ 130 compressed objects within 2 object streams
+ 39 named destinations out of 1000 (max. 500000)
+ 26630 words of extra memory for PDF output out of 29859 (max. 10000000)
 
