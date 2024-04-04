@@ -77,7 +77,7 @@ We propose prior sensitivity analyses and prior predictive simulations to determ
 \section{Introduction}
 Molecular sequence data have been essential to unravel the evolutionary history of many organisms. The molecular clock is a statistical tool that posits that molecular evolution, in the form of substitutions, follows a statistical process. For example, under the simplest molecular clock model, known as the strict clock, substitutions accumulate linearly over time along a lineage, such that the evolutionary rate is constant over time \citep{zuckerkandl1965evolutionary}. At the other end of the spectrum, relaxed molecular clocks allow every lineage in a phylogenetic tree to display a different evolutionary rate (\cite{drummond2006relaxed} and reviewed in \citep{ho2014molecular}). 
 
-All molecular clock models have a fundamental limitation, where evolutionary rates and times are unidentifiable. That is, there exist an infinite number of combinations of evolutionary rates and times that are compatible with an amount of evolutionary divergence \citep{yang2006bayesian,dos2013unbearable}. For this reason, external information, known as a molecular clock calibration is necessary to produce estimates in calendar units. As a case in point, consider two sequences whose genetic divergence from their most recent common ancestor is 10 subs/site. In the absence of calibrating information it is impossible to know \textit{how rapidly} they evolve and \textit{when} they diverged. The calibration can be a known evolutionary rate, such as 1 subs/site/year, or a divergence date, such as 1 year before present. The genetic distance can be divided by the evolutionary rate to infer the divergence time to infer a time to the most recent common ancestor of 10 years, or the genetic distance can be divided by the divergence date to infer the evolutionary rate, 10/subs/site/year in this case.
+All molecular clock models have a fundamental limitation, where evolutionary rates and times are unidentifiable. That is, there exist an infinite number of combinations of evolutionary rates and times that are compatible with an amount of evolutionary divergence \cite{yang2006bayesian,dos2013unbearable}. For this reason, external information, known as a molecular clock calibration is necessary to produce estimates in calendar units. As a case in point, consider two sequences whose genetic divergence from their most recent common ancestor is 10 subs/site. In the absence of calibrating information it is impossible to know \texit{how rapidly} they evolve and \texit{when} they diverged. The calibration can be a known evolutionary rate, such as 1 subs/site/year, or a divergence date, such as 1 year before present. The genetic distance can be divided by the evolutionary rate to infer the divergence time to infer a time to the most recent common ancestor of 10 years, or the genetic distance can be divided by the divergence date to infer the evolutionary rate, 10/subs/site/year in this case.
 
 The finding that some organisms accumulate substitutions in a measurable timescale prompted the use of sequence sampling times for calibration \citep{drummond2003measurably}. The motivation behind this practice is that sequence data collected at different points in time would have accumulated a corresponding number of substitutions. With the example above, a sequence collected six months of the common ancestor would have accumulated 5 subs/site (10 subs/site/year $\times$ 0.5 years = 5 subs/site), whereas one collected after 1 year would have accrued 10 subs/site (10 subs/site/year$\times$ 1 year = 10 subs/site). As a result, sequence sampling times act as a time-calibration that is intuitively informative about the evolutionary rate.
 
@@ -122,8 +122,8 @@ A fundamental question to warrant the use of sampling times for molecular calibr
 	
     \item Simulations \textbf{\textcolor{red}{Pending for now} - does the tree prior impact the accuracy to detect temporal signal?}
         \subitem \textcolor{red}{To do: This is where the simulations come in. Think of visuals here. Probably best displayed as tables? We can also just have plots of error bars per analysis to show coverage of key parameters...}
-            \begin{table}[H]
-        \caption{tree prior}
+        \begin{table}[H]
+        \caption{Heterochronous}
         \begin{center}
         \begin{tabular}{ c | c c c }
          & Exponential & Gamma & Lognormal \\ 
@@ -133,6 +133,22 @@ A fundamental question to warrant the use of sampling times for molecular calibr
         Orthoflavivirus powassanense; Strict Clock &  &  &  \\  
         Orthoflavivirus powassanense; Relaxed Clock &  &  &  \\   
         Treponema pallidum; Strict Clock & 0.0 & 0.0 & 0.0 \\  
+        Treponema pallidum; Relaxed Clock &  &  & 
+        \end{tabular}
+        \end{center}
+        \end{table}
+
+        \begin{table}[H]
+        \caption{Isochronous}
+        \begin{center}
+        \begin{tabular}{ c | c c c }
+         & Exponential & Gamma & Lognormal \\ 
+        \hline
+        Vibrio cholerae; Strict Clock & .0 & .0 & .0 \\  
+        Vibrio cholerae; Relaxed Clock &  &  &  \\   
+        Orthoflavivirus powassanense; Strict Clock &  &  &  \\  
+        Orthoflavivirus powassanense; Relaxed Clock &  &  &  \\   
+        Treponema pallidum; Strict Clock & .0 & .0 & .0 \\  
         Treponema pallidum; Relaxed Clock &  &  & 
         \end{tabular}
         \end{center}
