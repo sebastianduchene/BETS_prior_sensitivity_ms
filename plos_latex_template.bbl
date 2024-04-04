@@ -1,0 +1,35 @@
+\begin{thebibliography}{1}
+
+\bibitem{zuckerkandl1965evolutionary}
+Zuckerkandl E, Pauling L.
+\newblock Evolutionary divergence and convergence in proteins.
+\newblock In: Evolving genes and proteins. Elsevier; 1965. p. 97--166.
+
+\bibitem{drummond2006relaxed}
+Drummond AJ, Ho SYW, Phillips MJ, Rambaut A.
+\newblock Relaxed phylogenetics and dating with confidence.
+\newblock PLoS Biology. 2006;4(5):e88.
+
+\bibitem{ho2014molecular}
+Ho SY, Duch{\^e}ne S.
+\newblock Molecular-clock methods for estimating evolutionary rates and
+  timescales.
+\newblock Molecular Ecology. 2014;23(24):5947--5965.
+
+\bibitem{yang2006bayesian}
+Yang Z, Rannala B.
+\newblock Bayesian estimation of species divergence times under a molecular
+  clock using multiple fossil calibrations with soft bounds.
+\newblock Molecular biology and evolution. 2006;23(1):212--226.
+
+\bibitem{dos2013unbearable}
+Dos~Reis M, Yang Z.
+\newblock The unbearable uncertainty of Bayesian divergence time estimation.
+\newblock Journal of Systematics and Evolution. 2013;51(1):30--43.
+
+\bibitem{drummond2003measurably}
+Drummond AJ, Pybus OG, Rambaut A, Forsberg R, Rodrigo AG.
+\newblock Measurably evolving populations.
+\newblock Trends in ecology \& evolution. 2003;18(9):481--488.
+
+\end{thebibliography}

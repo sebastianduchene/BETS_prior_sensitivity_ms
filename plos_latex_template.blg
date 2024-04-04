@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: plos_latex_template.aux
+The style file: plos2015.bst
+Database file #1: References.bib
+Warning--I didn't find a database entry for "bib3"
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+You've used 6 entries,
+            3058 wiz_defined-function locations,
+            669 strings with 5496 characters,
+and the built_in function-call counts, 9272 in all, are:
+= -- 1189
+> -- 68
+< -- 1
++ -- 34
+- -- 17
+* -- 754
+:= -- 1024
+add.period$ -- 24
+call.type$ -- 6
+change.case$ -- 2
+chr.to.int$ -- 0
+cite$ -- 6
+duplicate$ -- 827
+empty$ -- 871
+format.name$ -- 23
+if$ -- 2158
+int.to.chr$ -- 0
+int.to.str$ -- 6
+missing$ -- 53
+newline$ -- 33
+num.names$ -- 6
+pop$ -- 88
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 88
+stack$ -- 0
+substring$ -- 1712
+swap$ -- 147
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 57
+width$ -- 7
+write$ -- 69
+(There was 1 warning)
