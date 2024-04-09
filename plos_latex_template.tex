@@ -240,22 +240,34 @@ There exist several statistical tests to determine whether a population has meas
 
 Date randomisation tests consist of fitting a molecular clock to the data after permuting the sampling times, a procedure that is repeated multiple times to obtain a `null' distribution of the evolutionary rate \cite{ramsden2009hantavirus}. The data are considered to have temporal signal if the evolutionary rate estimated with the correct sampling times falls outside such `null' distribution \cite{ramsden2009hantavirus,duchene2015performance}.
 
-BETS (Bayesian Evaluation of Temporal Signal) is a fully Bayesian approach for assessing temporal signal \cite{duchene2020bayesian}, by treating it as a model selection problem. The premise of the test is that the data in question should have higher statistical fit when the sampling times are included than when they are not. In practice, the data are analysed with their correct sampling times and with all samples assigned the same date (typically at present), while keeping the rest of the phylogenetic model the same, including the molecular clock, tree prior and substitution model. The marginal likelihood is calculated in each case to compute Bayes factors, which quantify the amount of evidence for one model over another, here that with sampling times vs that without.
-
-A major advantage of BETS is that can consider the full model and it naturally accommodates important sources of uncertainty, including calibration uncertainty due to radio carbon dating, which is common in ancient DNA studies \cite{molak2015empirical}. An important consideration here is that marginal likelihood calculations require that all priors are proper distributions, that is, that they integrate to one \cite{r2019marginal}. 
+BETS (Bayesian Evaluation of Temporal Signal) is a fully Bayesian approach for assessing temporal signal \cite{duchene2020bayesian}, by treating it as a model selection problem. The premise of the test is that the data in question should have higher statistical fit when the sampling times are included than when they are not. In practice, the data are analysed with their correct sampling times and with all samples assigned the same date (typically at present), while keeping the rest of the phylogenetic model the same, including the molecular clock, tree prior and substitution model. The marginal likelihood is calculated in each case to compute Bayes factors, which quantify the amount of evidence for one model over another, here that with sampling times vs that without. A major advantage of BETS is that can consider the full model and it naturally accommodates important sources of uncertainty, including calibration uncertainty due to radio carbon dating, which is common in ancient DNA studies \cite{molak2015empirical}. 
 
 Most parameters of the phylogenetic model have individual prior probability distributions that can be chosen by the user, for example, the evolutionary rate, or the transition-to-transversion ratio of the HKY substitution model. The phylogenetic tree topology and branch lengths are usually assigned a branching process, such as a coalescent or birth-death process. These tree priors implicitly impose a prior probability distribution on the ages of nodes and the tree length, and therefore contribute some calibration information. As a case in point, consider a tree prior defined as a coalescent process with a single parameter, the effective population size, $\Phi$, with a small value (the prior on $\Phi$ is thus known as a \textit{hyperprior}). The time to the most recent common ancestor would have its density concentrated close to the present. In contrast, the same tree prior with a large value for $\Phi$ will favour a very old time to the most recent common ancestor. Clearly, these situations make very different evolutionary statements.
 
 \section*{Results}
-We collected genome sequence data from three microbial data sets that have been shown to have temporal signal using Bayesian phylogenetic methods. We analysed the data sets using BETS under a coalescent tree prior with constant population size. To investigate the impact of the 
+We collected genome sequence data from three microbial data sets that have been shown to have temporal signal using Bayesian phylogenetic methods. We analysed the data sets using BETS under a coalescent tree prior with constant population size and two possible clock models; a strict and an uncorrelated relaxed clock with an underlying lognormal distribution. We set up our analyses in BEAST1.10 \cite{suchard2018bayesian} and calculated log marginal likelihoods with and without sampling times for each combination of molecular clock model and tree prior. 
 
+To investigate the impact of the tree prior we considered different (hyper) prior distributions for the effective population size, $\Phi$. This parameter is referred to as a \textit{scale parameter} for time because large values imply more dispersion (the molecular clock rate is also a scale parameter), and it is typically assigned a $1/\Phi$ prior distribution, which is the Jeffrey's prior that is uninformative and invariant to reparameterisation  \cite{drummond2002estimating}. Although this prior has attractive attributes, it is an improper distribution (it does not integrate to one over its domain; $\int_{0}^{\infty} \frac{1}{x}\,dx=\infty$), a problem for model comparison using Bayes factors, because marginal likelihood calculations require that all priors be proper distributions \cite{r2019marginal, baele2013proper}. Instead we selected three prior distributions that have been used in recent literature as shown in Table \ref{table:prior_distros_on_Phi} and FigX. \textcolor{blue}{Note to Sebastian: make quick figure with the densities of the three priors on $\Phi$}
 
-\textcolor{red}{Describe analyses super briefly and then go into each data set}
+\begin{table}
+\caption{Prior distributions for the effective population size, $\Phi$ parameter}
+\begin{center} 
+	\label{table:prior_distros_on_Phi}
+	\begin{tabular}{c|c}
+		Probability distribution function & Parameters\\
+		\hline
+		Exponential & mean, $\mu=1.0$\\
+        $\Gamma$ (Gamma) & shape, $\kappa=0.001$; scale, $\theta=1000$\\
+		Log-Normal & mean, $\mu=1.0$; standard deviation $\sigma=5.0$\\
+	\end{tabular}
+\end{center}
+\end{table}
+
+\subsection*{Empirical data analyses}
+
+\textcolor{red}{Describe each data set here very briefly and the impact of the clock model and then of the tree prior. Mention also the perplexing case of Treponema. Then delve into the sensitivity of the posterior to the tree prior in each case and this is where we need to bring up the CTMC scale prior}
 
 \textit{Vibrio cholerae} is the bacterium responsible for cholera 
-
-
-\textcolor{red}{Introduction up to here: the next point to make is that the the priors can convey information that is unknown to the practicioner. First, the node heights (and mention hyperpriors), and second, the rate via the CTMC scale prior}
 
 \textcolor{blue}{Things we are waiting for: Treponema: $init-iso_aln2_het_relaxed_gamma/lorngormal.xml$ with max root height of 2000, and marginal likleihoods for all simulations. I expect that the treponema heterochronous with the strict clock will tend to choose the relaxed anyway}
 
@@ -266,7 +278,7 @@ We collected genome sequence data from three microbial data sets that have been 
 
 
 % Results and Discussion can be combined.
-\section*{Results}
+
 
 Site patterns
 Empirical
