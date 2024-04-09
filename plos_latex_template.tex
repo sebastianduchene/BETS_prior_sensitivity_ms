@@ -88,7 +88,7 @@
 
 % Use nameref to cite supporting information files (see Supporting Information section for more info)
 \usepackage{nameref,hyperref}
-
+\usepackage[normalem]{ulem}
 % line numbers
 \usepackage[right]{lineno}
 
@@ -174,7 +174,7 @@
 % Title must be 250 characters or less.
 \begin{flushleft}
 {\Large
-\textbf\newline{Title of submission to PLOS journals} % Please use "sentence case" for title and headings (capitalize only the first word in a title (or heading), the first word in a subtitle (or subheading), and any proper nouns).
+\textbf\newline{Untangling temporal signal and the phylodynamic threshold of microbial genome data} % Please use "sentence case" for title and headings (capitalize only the first word in a title (or heading), the first word in a subtitle (or subheading), and any proper nouns).
 }
 \newline
 % Insert author names, affiliations and corresponding author email (do not include titles, positions, or degrees).
@@ -208,18 +208,16 @@ Our understanding of the evolution of many microbes has been revolutionised by t
 
 For many microbes, the sequence sampling times themselves can be often used for calibration. Phylogenetic tests of temporal signal are often used to decide whether such calibrations are reliable. Critically, in addition to the calibration information, the full Bayesian phylogenetic model also includes the molecular clock model and a branching process (tree prior). As a result, there are multiple sources of information that are difficult to untangle.
 
-We assessed temporal signal in three microbial data sets of human and animal diseases with a range of evolutionary characteristics and with ancient DNA sequences; \textit{Powassan virus} (POWV), the cholera bacetrium (\textit{Vibrio cholerae}), and the syphilis bacterium (\textit{Treponema palladium.}). We found that the tree prior can have a substantial impact on whether temporal signal is detected. To investigate this problem we conducted extensive simulations and calculated the sensitivity and specificity of these tests under several tree priors. 
+We assessed temporal signal in three microbial data sets of human and animal diseases with a range of evolutionary characteristics and with ancient DNA sequences; \textit{Powassan virus} (POWV), the cholera bacetrium (\textit{Vibrio cholerae}), and the syphilis bacterium (\textit{Treponema palladium.}). We found that the tree prior can have a substantial impact on whether temporal signal is detected. To investigate this problem we conducted extensive simulations and calculated the sensitivity and specificity of these tests under several tree priors.  Highly informative sequence data sets are generally robust to the tree prior. However, in data sets with low information content, choosing a prior that is highly informative and inconsistent with the data can result in the false rejection of temporal signal. 
 
-We find that highly informative sequence data sets are generally robust to the tree prior. In contrast, in data sets with low information content, choosing a prior that is highly informative and inconsistent with the data can result in the false rejection of temporal signal. 
-
-We propose prior sensitivity analyses and prior predictive simulations to determine whether the prior is reasonable and to improve the detection of temporal signal and maximise the information that can be drawn from molecular sequence data sets.
+We demonstrate that prior sensitivity analyses and prior predictive simulations are an effective means to determine whether the prior is reasonable and to improve the detection of temporal signal and leverage the information that can be drawn from molecular sequence data sets.
 
 
 % Please keep the Author Summary between 150 and 200 words
 % Use first person. PLOS ONE authors please skip this step. 
 % Author Summary not valid for PLOS ONE submissions.   
 \section*{Author summary}
-Pending
+\textcolor{red}{Pending.}
 \linenumbers
 
 % Use "Eq" instead of "Equation" for equation citations.
@@ -228,11 +226,38 @@ Molecular sequence data have been essential to unravel the evolutionary history 
 
 All molecular clock models have a fundamental limitation, where evolutionary rates and times are unidentifiable. That is, there exist an infinite number of combinations of evolutionary rates and times that are compatible with an amount of evolutionary divergence \cite{yang2006bayesian,dos2013unbearable}. For this reason, external information, known as a molecular clock calibration is necessary to produce estimates in calendar units. As a case in point, consider two sequences whose genetic divergence from their most recent common ancestor is 10 subs/site. In the absence of calibrating information it is impossible to know \textit{how rapidly} they evolve and \textit{when} they diverged. The calibration can be a known evolutionary rate, such as 1 subs/site/year, or a divergence date, such as 1 year before present. The genetic distance can be divided by the evolutionary rate to infer the divergence time to infer a time to the most recent common ancestor of 10 years, or the genetic distance can be divided by the divergence date to infer the evolutionary rate, 10/subs/site/year in this case.
 
-The finding that some organisms accumulate substitutions in a measurable timescale prompted the use of sequence sampling times for calibration \cite{drummond2003measurably}. The motivation behind this practice is that sequence data collected at different points in time would have accumulated a corresponding number of substitutions. With the example above, a sequence collected six months of the common ancestor would have accumulated 5 subs/site (10 subs/site/year $\times$ 0.5 years = 5 subs/site), whereas one collected after 1 year would have accrued 10 subs/site (10 subs/site/year$\times$ 1 year = 10 subs/site). As a result, sequence sampling times act as a time-calibration that is intuitively informative about the evolutionary rate.
+The finding that some organisms accumulate substitutions in a measurable timescale prompted the use of sequence sampling times for calibration \cite{rodrigo1999coalescent, korber2000timing}. The motivation behind this practice is that sequence data collected at different points in time would have accumulated a corresponding number of substitutions. With the example above, a sequence collected six months of the common ancestor would have accumulated 5 subs/site (10 subs/site/year $\times$ 0.5 years = 5 subs/site), whereas one collected after 1 year would have accrued 10 subs/site (10 subs/site/year$\times$ 1 year = 10 subs/site). As a result, sequence sampling times act as a time-calibration that is intuitively informative about the evolutionary rate.
 
-A fundamental question to warrant the use of sampling times for molecular calibration is the extent to which a data set behaves as a measurably evolving population. 
+A fundamental question about using sampling times for molecular clock calibration is the extent to which the data can be assumed to have been sampled from a measurably evolving population. A measurably evolving population is defined as to the situation where the interval of time over which the samples were taken captures an appreciable amount of evolutionary change \cite{drummond2003measurably}. For rapidly evolving pathogens, such as RNA viruses, a measurably evolving population may be obtained by drawing samples over weeks or months. More slowly evolving microbes, such as the tuberculosis bacterium (\textit{Mycobacterium tuberculosis}) may require sampling over many years. 
 
-\textcolor{red}{Introduction up to here. We need more information on measurably evolving populations, tests of temporal signal (including regression), and their relevance in light of genome data}
+The phylodynamic threshold is a closely related concept. It refers to the point in time in which a recently emerging microbe has accumulated sufficient evolutionary change in its genome for it to be treated as a measurably evolving population. The SARS-CoV-2 virus attained the phylodynamic threshold within 41 days of the first sampled genome and about three months since its estimated emergence in humans \cite{duchene2020temporal}.
+
+Whole genome sequencing and ancient DNA are two technologies that have dramatically expanded the range of organisms from which we can sample measurably evolving populations. By sequencing complete genomes, instead of individual genes, we can capture more genetic variation overall. In a microbe with an evolutionary rate of about 1$\times 10^{-7}$ subs/site/year (e.g. \textit{M. tuberculosis} \cite{menardo2019molecular}) sampled over a decade would yield on average one substitution for every 1M bases sequenced, with shorter stretches of sequences being mostly uninformative. As a result, many microbes whose evolution was considered too slow to be treated a measurably evolving populations, including many bacteria, are now commonly analysed using frameworks that were thought to be only applicable to rapidly evolving pathogens, such as RNA viruses \cite{biek2015measurably}.
+
+Ancient DNA has had a profound impact in our understanding of the long-term evolution of many microbial pathogens \cite{duchene2020recovery,spyrou2019ancient}. The inclusion of ancient DNA in molecular evolutionary analyses can substantially broaden the sampling window, and therefore provide invaluable data points for molecular clock calibration because the data can be effectively treated as coming from a measurably evolving population \cite{ho2020dating}.
+
+There exist several statistical tests to determine whether a population has measurably evolving behaviour, also known as tests of temporal signal. The root-to-tip regression takes a phylogenetic tree for which the branch lengths measure evolutionary distance (i.e. a phylogram) and fits a linear regression of the distance from the root to the tips as a function of their sampling time \cite{korber2000timing}. The regression slope is a crude estimate of the evolutionary rate, the \textit{x-}intercept is the time to the most recent common ancestor, and the $R^2$ is a measure of clocklike evolution. In general, the root-to-tip regression is a powerful tool for visual inspection of the data, for example to detect outliers or identify lineages with particularly low or high evolutionary rates \cite{rambaut2016exploring,featherstone2023clockor2,volz2017scalable}. However, it the data points are not statistically independent, such that it is not a formal statistical test of temporal signal and statistics, such as \textit{p-}values are invalid \cite{rieux2016inferences}.
+
+Date randomisation tests consist of fitting a molecular clock to the data after permuting the sampling times, a procedure that is repeated multiple times to obtain a `null' distribution of the evolutionary rate \cite{ramsden2009hantavirus}. The data are considered to have temporal signal if the evolutionary rate estimated with the correct sampling times falls outside such `null' distribution \cite{ramsden2009hantavirus,duchene2015performance}.
+
+BETS (Bayesian Evaluation of Temporal Signal) is a fully Bayesian approach for assessing temporal signal \cite{duchene2020bayesian}, by treating it as a model selection problem. The premise of the test is that the data in question should have higher statistical fit when the sampling times are included than when they are not. In practice, the data are analysed with their correct sampling times and with all samples assigned the same date (typically at present), while keeping the rest of the phylogenetic model the same, including the molecular clock, tree prior and substitution model. The marginal likelihood is calculated in each case to compute Bayes factors, which quantify the amount of evidence for one model over another, here that with sampling times vs that without.
+
+A major advantage of BETS is that can consider the full model and it naturally accommodates important sources of uncertainty, including calibration uncertainty due to radio carbon dating, which is common in ancient DNA studies \cite{molak2015empirical}. An important consideration here is that marginal likelihood calculations require that all priors are proper distributions, that is, that they integrate to one \cite{r2019marginal}. 
+
+Most parameters of the phylogenetic model have individual prior probability distributions that can be chosen by the user, for example, the evolutionary rate, or the transition-to-transversion ratio of the HKY substitution model. The phylogenetic tree topology and branch lengths are usually assigned a branching process, such as a coalescent or birth-death process. These tree priors implicitly impose a prior probability distribution on the ages of nodes and the tree length, and therefore contribute some calibration information. As a case in point, consider a tree prior defined as a coalescent process with a single parameter, the effective population size, $\Phi$, with a small value (the prior on $\Phi$ is thus known as a \textit{hyperprior}). The time to the most recent common ancestor would have its density concentrated close to the present. In contrast, the same tree prior with a large value for $\Phi$ will favour a very old time to the most recent common ancestor. Clearly, these situations make very different evolutionary statements.
+
+\section*{Results}
+We collected genome sequence data from three microbial data sets that have been shown to have temporal signal using Bayesian phylogenetic methods. We analysed the data sets using BETS under a coalescent tree prior with constant population size. To investigate the impact of the 
+
+
+\textcolor{red}{Describe analyses super briefly and then go into each data set}
+
+\textit{Vibrio cholerae} is the bacterium responsible for cholera 
+
+
+\textcolor{red}{Introduction up to here: the next point to make is that the the priors can convey information that is unknown to the practicioner. First, the node heights (and mention hyperpriors), and second, the rate via the CTMC scale prior}
+
+\textcolor{blue}{Things we are waiting for: Treponema: $init-iso_aln2_het_relaxed_gamma/lorngormal.xml$ with max root height of 2000, and marginal likleihoods for all simulations. I expect that the treponema heterochronous with the strict clock will tend to choose the relaxed anyway}
 
 \begin{eqnarray}
 \label{eq:schemeP}
@@ -242,31 +267,79 @@ A fundamental question to warrant the use of sampling times for molecular calibr
 
 % Results and Discussion can be combined.
 \section*{Results}
+
+Site patterns
+Empirical
+Cholera: 1392
+Powassan: 3457
+Treponema: 844
+Simulations
+Cholera: 640-710 (ucld), 580-710 (sc)
+Powassan: 14650 (het), ~4800 (iso)
+Treponema: 110-150 (ucld), running (sc) (edited)
+
 Nulla mi mi, venenatis sed ipsum varius, Table~\ref{table1} volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
 
-% Place tables after the first paragraph in which they are cited.
 \begin{table}[!ht]
-\begin{adjustwidth}{-2.25in}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
+\begin{adjustwidth}{-2.25in}{0in}
 \centering
 \caption{
-{\bf Table caption Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam.}}
-\begin{tabular}{|l+l|l|l|l|l|l|l|}
+{\bf Log Bayes factors between isochronous and heterochronous models for each dataset, separated by prior on population size}}
+\begin{tabular}{| c + c | c | c | }
 \hline
-\multicolumn{4}{|l|}{\bf Heading1} & \multicolumn{4}{|l|}{\bf Heading2}\\ \thickhline
-$cell1 row1$ & cell2 row 1 & cell3 row 1 & cell4 row 1 & cell5 row 1 & cell6 row 1 & cell7 row 1 & cell8 row 1\\ \hline
-$cell1 row2$ & cell2 row 2 & cell3 row 2 & cell4 row 2 & cell5 row 2 & cell6 row 2 & cell7 row 2 & cell8 row 2\\ \hline
-$cell1 row3$ & cell2 row 3 & cell3 row 3 & cell4 row 3 & cell5 row 3 & cell6 row 3 & cell7 row 3 & cell8 row 3\\ \hline
+\multicolumn{1}{|c|}{\bf Species; Clock Model} & Exponential & Gamma & Lognormal \\ \thickhline
+$Vibrio$ $cholerae;$ $Strict$ $Clock$ & 355.18 & 379.63 & 382.10 \\ \hline
+$Vibrio$ $cholerae;$ $Relaxed$ $Clock$ & 208.97 & 439.63 & 219.60 \\  \hline
+$Orthoflavivirus$ $powassanense;$ $Strict$ $Clock$ & -80.63 & 32.67 & 50.29 \\ \hline
+$Orthoflavivirus$ $powassanense;$ $Relaxed$ $Clock$ & -221.94 & 18.79  & 27.23 \\ \hline
+$Treponema$ $pallidum;$ $Strict$ $Clock$ & 105.80 & 2.17 & 1.85 \\ \hline
+$Treponema$ $pallidum;$ $Relaxed$ $Clock$ & -34.37 & -1474.14 & -34.04 \\ \hline
 \end{tabular}
-\begin{flushleft} Table notes Phasellus venenatis, tortor nec vestibulum mattis, massa tortor interdum felis, nec pellentesque metus tortor nec nisl. Ut ornare mauris tellus, vel dapibus arcu suscipit sed.
-\end{flushleft}
-\label{table1}
+\end{adjustwidth}
+\end{table}
+
+\begin{table}[!ht]
+\begin{adjustwidth}{-2.25in}{0in}
+\centering
+\caption{
+{\bf Proportion of simulations with temporal signal under heterochronous simulated data}}
+\begin{tabular}{ | c + c | c | c | c | }
+\hline
+\multicolumn{1}{|c|}{\bf Species; Clock Model} & Exponential & Gamma & Lognormal \\ \thickhline
+\hline
+$Vibrio$ $cholerae;$ $Strict$ $Clock$ & 1.0 & 1.0 & 1.0 \\ \hline
+$Vibrio$ $cholerae;$ $Relaxed$ $Clock$ &  &  &  \\  \hline
+$Orthoflavivirus$ $powassanense;$ $Strict$ $Clock$ &  &  &  \\ \hline
+$Orthoflavivirus$ $powassanense;$ $Relaxed$ $Clock$ &  &  &  \\  \hline
+$Treponema$ $pallidum;$ $Strict$ $Clock$ & 0.0 & 0.0 & 0.0 \\ \hline
+$Treponema$ $pallidum;$ $Relaxed$ $Clock$ & 0.0 & 1.0 & 0.8 \\ \hline
+\end{tabular}
+\end{adjustwidth}
+\end{table}
+
+\begin{table}[!ht]
+\begin{adjustwidth}{-2.25in}{0in}
+\centering
+\caption{
+{\bf Proportion of simulations without temporal signal under isochronous simulated data}}
+\begin{tabular}{ | c + c | c | c | c | }
+\hline
+\multicolumn{1}{|c|}{\bf Species; Clock Model} & Exponential & Gamma & Lognormal \\ \thickhline
+\hline
+$Vibrio$ $cholerae;$ $Strict$ $Clock$ & 0.0 & 1.0 & 1.0 \\ \hline
+$Vibrio$ $cholerae;$ $Relaxed$ $Clock$ &  &  &  \\  \hline
+$Orthoflavivirus$ $powassanense;$ $Strict$ $Clock$ &  &  &  \\ \hline
+$Orthoflavivirus$ $powassanense;$ $Relaxed$ $Clock$ &  &  &  \\  \hline
+$Treponema$ $pallidum;$ $Strict$ $Clock$ & 0.0 & 0.0 & 0.0 \\ \hline
+$Treponema$ $pallidum;$ $Relaxed$ $Clock$ & 0.0 & 1.0 & 0.9 \\ \hline
+\end{tabular}
 \end{adjustwidth}
 \end{table}
 
 Pending.
 \begin{figure}
 %	\begin{center}
-		\includegraphics[width=14cm]{sandbox_figures/polygon_plot.pdf}\newline
+		\includegraphics[width=12cm]{sandbox_figures/polygon_plot.pdf}\newline
 		\vspace{-0.5cm}
 		\caption{A polygon plot of the relative log marginal likelihoods of each microbe dataset under a different population size prior, analysed with four different configurations. Het (heterochronous) includes sampling, while iso (isochronous) does not include any sampling times. SC is strict clock and UCLD is the uncorrelated lognormal relaxed clock. Red represents an exponential hyperprior on the population size, blue is a gamma hyperprior, and green is a lognormal hyperprior.}
 		\label{figure:polygon_plots}
@@ -303,7 +376,7 @@ Nulla mi mi, venenatis sed ipsum varius, Table~\ref{table1} volutpat euismod dia
 \subsection*{Etiam eget sapien nibh}
 
 % For figure citations, please use "Fig" instead of "Figure".
-Nulla mi mi, Fig~\ref{fig1} venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, \nameref{S1_Video} vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa id, cursus neque. Praesent faucibus semper libero.
+Nulla mi mi, Fig~\ref{fig1} venenatis sed ipsum varius, volutpat euismod diam. Proin rutrum vel massa non gravida. Quisque tempor sem et dignissim rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at justo vitae nulla elementum commodo eu id massa. In vitae diam ac augue semper tincidunt eu ut eros. Fusce fringilla erat porttitor lectus cursus, \nameref{S1_Video} vel sagittis arcu lobortis. Aliquam in enim semper, aliquam massa iImpredictibilityd, cursus neque. Praesent faucibus semper libero.
 
 % Place figure captions after the first paragraph in which they are cited.
 \begin{figure}[!h]
