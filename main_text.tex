@@ -99,13 +99,13 @@ A fundamental question to warrant the use of sampling times for molecular calibr
         \begin{tabular}{ c | c c c }
          & Exponential & Gamma & Lognormal \\ 
         \hline
-        Vibrio cholerae; Strict Clock & 355.18 & 379.63 & 382.10 \\  Lorem ipsum dolor sit~\cite{bib1} amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam Eq~(\ref{eq:schemeP}) sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id.~\cite{bib2} Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
+        Vibrio cholerae; Strict Clock & 355.18 & 379.63 & 382.10 \\  
         Vibrio cholerae; Relaxed Clock & 208.97 & 439.63 & 219.60 \\   
         Orthoflavivirus powassanense; Strict Clock & -80.63 & 32.67 & 50.29 \\  
         Orthoflavivirus powassanense; Relaxed Clock & -221.94 & 18.79  & 27.23 \\   
         Treponema pallidum; Strict Clock & 105.80 & 2.17 & 1.85 \\  
         Treponema pallidum; Relaxed Clock & -34.37 & -1474.14 & -34.04
-        \end{tabular}n
+        \end{tabular}
         \end{center}
         \end{table}
     
@@ -122,13 +122,29 @@ A fundamental question to warrant the use of sampling times for molecular calibr
 	
     \item Simulations \textbf{\textcolor{red}{Pending for now} - does the tree prior impact the accuracy to detect temporal signal?}
         \subitem \textcolor{red}{To do: This is where the simulations come in. Think of visuals here. Probably best displayed as tables? We can also just have plots of error bars per analysis to show coverage of key parameters...}
-            \begin{table}[H]
-        \caption{tree prior}
+        \begin{table}[H]
+        \caption{Proportion of simulations with temporal signal under heterochronous simulated data}
         \begin{center}
         \begin{tabular}{ c | c c c }
          & Exponential & Gamma & Lognormal \\ 
         \hline
         Vibrio cholerae; Strict Clock & 1.0 & 1.0 & 1.0 \\  
+        Vibrio cholerae; Relaxed Clock &  &  &  \\   
+        Orthoflavivirus powassanense; Strict Clock &  &  &  \\  
+        Orthoflavivirus powassanense; Relaxed Clock &  &  &  \\   
+        Treponema pallidum; Strict Clock & 0.0 & 0.0 & 0.0 \\  
+        Treponema pallidum; Relaxed Clock &  &  & 
+        \end{tabular}
+        \end{center}
+        \end{table}
+
+        \begin{table}[H]
+        \caption{Proportion of simulations with temporal signal under isochronous simulated data}
+        \begin{center}
+        \begin{tabular}{ c | c c c }
+         & Exponential & Gamma & Lognormal \\ 
+        \hline
+        Vibrio cholerae; Strict Clock & 0.0 & 1.0 & 0.0 \\  
         Vibrio cholerae; Relaxed Clock &  &  &  \\   
         Orthoflavivirus powassanense; Strict Clock &  &  &  \\  
         Orthoflavivirus powassanense; Relaxed Clock &  &  &  \\   
