@@ -4,24 +4,43 @@ setwd("/home/sebastiand/Dropbox/projects_WORKING/BETS_prior_sensitivity/BETS_pri
 uniform_prior <- tail(read.table("prior_predictive_simulations/cholera_aln_prior_uniformPhi.log", 
                                  head = T, sep = "\t"), 1000)
 
+pdf("prior_predictive_plots.pdf", width = 7, height = 5, useDingbats = F)
 # Here we plot pairwise of Phi, tree length, tree height, and clock rate for the tree priors
-par(mfcol = c(4, 4), mar = c(4, 4, 0.5, 1))
-hist(uniform_prior$constant.popSize, main = "")
-plot(uniform_prior$constant.popSize, uniform_prior$treeLength)
-plot(uniform_prior$constant.popSize, uniform_prior$treeModel.rootHeight)
-plot(uniform_prior$constant.popSize, uniform_prior$clock.rate)
+par(mfcol = c(4, 4), mar = c(4, 5, 0.5, 0.5))
+hist(uniform_prior$constant.popSize, main = "", border = "white", col = "darkgrey", xlab = "")
+plot(uniform_prior$constant.popSize, uniform_prior$treeLength, pch = 20, col = rgb(0, 0, 0, 0.2), 
+     xlab = "", ylab = "Tree length", main = "", bty = "n")
+plot(uniform_prior$constant.popSize, uniform_prior$treeModel.rootHeight, 
+     pch = 20, col = rgb(0, 0, 0, 0.2), xlab = "", ylab = "Root height", bty = "n")
+plot(uniform_prior$constant.popSize, log10(uniform_prior$clock.rate), pch = 20, col = rgb(0, 0, 0, 0.2), 
+     xlab = expression(paste("Population size (", Phi, ")")), ylab = "Clock rate (subs/site/time)", main = "", bty = "n")
+#plot(log10(uniform_prior$treeModel.rootHeight), log10(uniform_prior$treeLength), pch = 20, col = rgb(0, 0, 0, 0.2), 
+#     xlab = "", ylab = "", bty = "n")
 plot(1, 1, type ="n", bty = "n", xaxt = "n", yaxt= "n", ylab = "", xlab = "", main = "")
-hist(uniform_prior$treeLength, main = "")
-plot(uniform_prior$treeLength, uniform_prior$treeModel.rootHeight)
-plot(uniform_prior$treeLength, uniform_prior$clock.rate)
+hist(uniform_prior$treeLength, main = "", border = "white", col = "darkgrey", xlab = "", ylab = "Frequency")
+plot(uniform_prior$treeLength, uniform_prior$treeModel.rootHeight, pch = 20, col = rgb(0, 0, 0, 0.2), 
+     xlab = "", ylab = "", bty = "n")
+plot(uniform_prior$treeLength, log10(uniform_prior$clock.rate), pch = 20, col = rgb(0, 0, 0, 0.2), 
+     main = "", xlab = "Tree length", ylab = "", bty = "n")
+plot(1, 1, type ="n", bty = "n", xaxt = "n", yaxt= "n", ylab = "", xlab = "", main = "")
+#plot(log10(uniform_prior$treeModel.rootHeight), log10(uniform_prior$treeLength), pch = 20, col = rgb(0, 0, 0, 0.2), 
+#     xlab = "", ylab = "", bty = "n")##
+plot(1, 1, type ="n", bty = "n", xaxt = "n", yaxt= "n", ylab = "", xlab = "", main = "")
+hist(uniform_prior$treeModel.rootHeight, main = "", border = "white", col = "darkgrey", 
+     ylab = "Frequency", xlab = "")
+plot(uniform_prior$treeModel.rootHeight, log10(uniform_prior$clock.rate), 
+     pch = 20, col = rgb(0, 0, 0, 0.2), ylab = "", xlab = "Root height", main = "", bty = "n")
+plot(1, 1, type ="n", bty = "n", xaxt = "n", yaxt= "n", ylab = "", xlab = "", main = "")
+#plot(log10(uniform_prior$clock.rate), log10(uniform_prior$treeLength), pch = 20, col = rgb(0, 0, 0, 0.2), 
+#     xlab = "", ylab = "", bty = "n")
+#plot(log10(uniform_prior$clock.rate), log10(uniform_prior$treeModel.rootHeight), pch = 20, col = rgb(0, 0, 0, 0.2), 
+#     xlab = "", ylab = "", bty = "n")
 plot(1, 1, type ="n", bty = "n", xaxt = "n", yaxt= "n", ylab = "", xlab = "", main = "")
 plot(1, 1, type ="n", bty = "n", xaxt = "n", yaxt= "n", ylab = "", xlab = "", main = "")
-hist(uniform_prior$treeModel.rootHeight, main = "")
-plot(uniform_prior$treeModel.rootHeight, uniform_prior$clock.rate)
-plot(1, 1, type ="n", bty = "n", xaxt = "n", yaxt= "n", ylab = "", xlab = "", main = "")
-plot(1, 1, type ="n", bty = "n", xaxt = "n", yaxt= "n", ylab = "", xlab = "", main = "")
-plot(1, 1, type ="n", bty = "n", xaxt = "n", yaxt= "n", ylab = "", xlab = "", main = "")
-hist(log10(uniform_prior$clock.rate), main = "")
+hist(log10(uniform_prior$clock.rate), main = "", border = "white", col = "darkgrey", 
+     ylab = "Frequency", xlab = "Clock rate \n(log10 subs/site/time)")
+dev.off()
+
 
 phi1 <- read.table("prior_predictive_simulations/cholera_aln_fixed_phi1.log", head = T, sep = "\t")
 phi10 <- read.table("prior_predictive_simulations/cholera_aln_fixed_phi10.log", head = T, sep = "\t")
