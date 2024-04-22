@@ -242,14 +242,16 @@ Date randomisation tests consist of fitting a molecular clock to the data after 
 
 BETS (Bayesian Evaluation of Temporal Signal) is a fully Bayesian approach for assessing temporal signal \cite{duchene2020bayesian}, by treating it as a model selection problem. The premise of the test is that the data in question should have higher statistical fit when the sampling times are included than when they are not. In practice, the data are analysed with their correct sampling times and with all samples assigned the same date (typically at present), while keeping the rest of the phylogenetic model the same, including the molecular clock, tree prior and substitution model. The marginal likelihood is calculated in each case to compute Bayes factors, which quantify the amount of evidence for one model over another, here that with sampling times vs that without. A major advantage of BETS is that can consider the full model and it naturally accommodates important sources of uncertainty, including calibration uncertainty due to radio carbon dating, which is common in ancient DNA studies \cite{molak2015empirical}. 
 
-Most parameters of the phylogenetic model have individual prior probability distributions that can be chosen by the user, for example, the evolutionary rate, or the transition-to-transversion ratio of the HKY substitution model. The phylogenetic tree topology and branch lengths are usually assigned a branching process, such as a coalescent or birth-death process. These tree priors implicitly impose a prior probability distribution on the ages of nodes and the tree length, and therefore contribute some calibration information. As a case in point, consider a tree prior defined as a coalescent process with a single parameter, the effective population size, $\Phi$, with a small value (the prior on $\Phi$ is thus known as a \textit{hyperprior}). The time to the most recent common ancestor would have its density concentrated close to the present. In contrast, the same tree prior with a large value for $\Phi$ will favour a very old time to the most recent common ancestor. Clearly, these situations make very different evolutionary statements.
+Most parameters of the phylogenetic model have individual prior probability distributions that can be chosen by the user, for example, the evolutionary rate, or the transition-to-transversion ratio of the HKY substitution model. The phylogenetic tree topology and branch lengths are usually assigned a branching process, such as a coalescent or birth-death process. These tree priors implicitly impose a prior probability distribution on the ages of nodes and the tree length, and therefore contribute some calibration information. 
 
 \section*{Results}
 We collected genome sequence data from three microbial data sets that have been shown to have temporal signal using Bayesian phylogenetic methods. We analysed the data sets using BETS under a coalescent tree prior with constant population size and two possible clock models; a strict and an uncorrelated relaxed clock with an underlying lognormal distribution. We set up our analyses in BEAST1.10 \cite{suchard2018bayesian} and calculated log marginal likelihoods with and without sampling times for each combination of molecular clock model and tree prior. 
 
 To investigate the impact of the tree prior we considered different (hyper) prior distributions for the effective population size, $\Phi$. This parameter is referred to as a \textit{scale parameter} for time because large values imply more dispersion (the molecular clock rate is also a scale parameter), and it is typically assigned a $1/\Phi$ prior distribution, which is the Jeffrey's prior that is uninformative and invariant to reparameterisation  \cite{drummond2002estimating}. Although this prior has attractive attributes, it is an improper distribution (it does not integrate to one over its domain; $\int_{0}^{\infty} \frac{1}{x}\,dx=\infty$), a problem for model comparison using Bayes factors, because marginal likelihood calculations require that all priors be proper distributions \cite{r2019marginal, baele2013proper}. Instead we selected three prior distributions that have been used in recent literature as shown in Table \ref{table:prior_distros_on_Phi} and FigX. \textcolor{blue}{Note to Sebastian: make quick figure with the densities of the three priors on $\Phi$}
 
-\begin{table}
+Our rationale for using different prior distributions on $\Phi$ is its impact on parameters that pertain to the molecular clock. Under the constant coalescent process, $\Phi$ is the single parameter in most implementations. Because it is associated with the genetic diversity and population size, it is expected that large values of $\Phi$ will result in a time to the most recent common ancestor that is older than if $\Phi$ is small. Thus a constant coalescent tree prior with a prior for $\Phi$ that favours large values will elicit old node times. The prior on $\Phi$ will also have an impact on the evolutionary rate for two key reasons. First, by impacting the overall age of the tree, it will also impact the length of time over which the sequence data evolved. Second, the default prior for the evolutionary rate in BEAST1.10 is a Gamma ($\Gamma$) distribution with shape ($\alpha$) of 0.5 and beta ($\beta$, also known as the `rate') equal to the tree length (sum of all branch lengths) \cite{wang2014priors, ferreira2008bayesian}. In this software, this prior is known as the CTMC-rate reference prior and its mean value is 0.5 / tree length, meaning that it is indirectly impacted by $\Phi$. 
+
+\begin{table}[h]
 \caption{Prior distributions for the effective population size, $\Phi$ parameter}
 \begin{center} 
 	\label{table:prior_distros_on_Phi}
@@ -319,12 +321,14 @@ $Treponema$ $pallidum;$ $Relaxed$ $Clock$ & -34.37 & -1474.14 & -34.04 \\ \hline
 \hline
 \multicolumn{1}{|c|}{\bf Species; Clock Model} & Exponential & Gamma & Lognormal \\ \thickhline
 \hline
-$Vibrio$ $cholerae;$ $Strict$ $Clock$ & 1.0 & 1.0 & 1.0 \\ \hline
-$Vibrio$ $cholerae;$ $Relaxed$ $Clock$ &  &  &  \\  \hline
+$Vibrio$ $cholerae;$ $Strict$ $Clock$ & 10 & 10 & 10 \\ \hline
+$Vibrio$ $cholerae;$ $Relaxed$ $Clock$ & 10 & 10 & 10 \\  \hline
+$Vibrio$ $cholerae;$ $Best\ clock\ model$ & 10 & 10 & 10 \\  \hline
 $Orthoflavivirus$ $powassanense;$ $Strict$ $Clock$ &  &  &  \\ \hline
 $Orthoflavivirus$ $powassanense;$ $Relaxed$ $Clock$ &  &  &  \\  \hline
-$Treponema$ $pallidum;$ $Strict$ $Clock$ & 0.0 & 0.0 & 0.0 \\ \hline
-$Treponema$ $pallidum;$ $Relaxed$ $Clock$ & 0.0 & 1.0 & 0.8 \\ \hline
+$Treponema$ $pallidum;$ $Strict$ $Clock$ & 0 & 0 & 0 \\ \hline
+$Treponema$ $pallidum;$ $Relaxed$ $Clock$ & 0 & 10 & 8 \\ \hline
+$Treponema$ $pallidum;$ $Relaxed$ $Clock$ & & & \\ \hline
 \end{tabular}
 \end{adjustwidth}
 \end{table}
@@ -338,12 +342,14 @@ $Treponema$ $pallidum;$ $Relaxed$ $Clock$ & 0.0 & 1.0 & 0.8 \\ \hline
 \hline
 \multicolumn{1}{|c|}{\bf Species; Clock Model} & Exponential & Gamma & Lognormal \\ \thickhline
 \hline
-$Vibrio$ $cholerae;$ $Strict$ $Clock$ & 1.0 & 0.0 & 0.0 \\ \hline
-$Vibrio$ $cholerae;$ $Relaxed$ $Clock$ &  &  &  \\  \hline
+$Vibrio$ $cholerae;$ $Strict$ $Clock$ & 10 & 0 & 0 \\ \hline
+$Vibrio$ $cholerae;$ $Relaxed$ $Clock$ & 0 & 0 & 0 \\  \hline
+$Vibrio$ $cholerae;$ $Best\ clock\ model$ & 0 & 0 & 0 \\  \hline
 $Orthoflavivirus$ $powassanense;$ $Strict$ $Clock$ &  &  &  \\ \hline
 $Orthoflavivirus$ $powassanense;$ $Relaxed$ $Clock$ &  &  &  \\  \hline
-$Treponema$ $pallidum;$ $Strict$ $Clock$ & 1.0 & 1.0 & 1.0 \\ \hline
-$Treponema$ $pallidum;$ $Relaxed$ $Clock$ & 1.0 &  0.0 &  0.0 \\ \hline
+$Treponema$ $pallidum;$ $Strict$ $Clock$ & 10 & 10 & 10 \\ \hline
+$Treponema$ $pallidum;$ $Relaxed$ $Clock$ & 10 &  0 &  0 \\ \hline
+$Treponema$ $pallidum;$ $Best\ clock\ model$ & &  &  \\ \hline
 \end{tabular}
 \end{adjustwidth}
 \end{table}
