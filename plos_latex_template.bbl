@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{zuckerkandl1965evolutionary}
 Zuckerkandl E, Pauling L.
@@ -27,9 +27,170 @@ Dos~Reis M, Yang Z.
 \newblock The unbearable uncertainty of Bayesian divergence time estimation.
 \newblock Journal of Systematics and Evolution. 2013;51(1):30--43.
 
+\bibitem{rodrigo1999coalescent}
+Rodrigo AG, Felsenstein J.
+\newblock Coalescent approaches to HIV population genetics.
+\newblock The evolution of HIV. 1999; p. 233--272.
+
+\bibitem{korber2000timing}
+Korber B, Muldoon M, Theiler J, Gao F, Gupta R, Lapedes A, et~al.
+\newblock Timing the ancestor of the HIV-1 pandemic strains.
+\newblock science. 2000;288(5472):1789--1796.
+
 \bibitem{drummond2003measurably}
 Drummond AJ, Pybus OG, Rambaut A, Forsberg R, Rodrigo AG.
 \newblock Measurably evolving populations.
 \newblock Trends in ecology \& evolution. 2003;18(9):481--488.
+
+\bibitem{rambaut2016exploring}
+Rambaut A, Lam TT, Max~Carvalho L, Pybus OG.
+\newblock Exploring the temporal structure of heterochronous sequences using
+  TempEst (formerly Path-O-Gen).
+\newblock Virus evolution. 2016;2(1):vew007.
+
+\bibitem{featherstone2023clockor2}
+Featherstone LA, Rambaut A, Duchene S, Wirth W.
+\newblock Clockor2: Inferring global and local strict molecular clocks using
+  root-to-tip regression.
+\newblock BioRxiv. 2023; p. 2023--07.
+
+\bibitem{volz2017scalable}
+Volz E, Frost SD.
+\newblock Scalable relaxed clock phylogenetic dating.
+\newblock Virus evolution. 2017;3(2):vex025.
+
+\bibitem{rieux2016inferences}
+Rieux A, Balloux F.
+\newblock Inferences from tip-calibrated phylogenies: a review and a practical
+  guide.
+\newblock Molecular ecology. 2016;25(9):1911--1924.
+
+\bibitem{ramsden2009hantavirus}
+Ramsden C, Holmes EC, Charleston MA.
+\newblock Hantavirus evolution in relation to its rodent and insectivore hosts:
+  no evidence for codivergence.
+\newblock Molecular biology and evolution. 2009;26(1):143--153.
+
+\bibitem{duchene2015performance}
+Duch{\^e}ne S, Duch{\^e}ne D, Holmes EC, Ho SY.
+\newblock The performance of the date-randomization test in phylogenetic
+  analyses of time-structured virus data.
+\newblock Molecular Biology and Evolution. 2015;32(7):1895--1906.
+
+\bibitem{duchene2020bayesian}
+Duchene S, Lemey P, Stadler T, Ho SY, Duchene DA, Dhanasekaran V, et~al.
+\newblock Bayesian evaluation of temporal signal in measurably evolving
+  populations.
+\newblock Molecular Biology and Evolution. 2020;37(11):3363--3379.
+
+\bibitem{molak2015empirical}
+Molak M, Suchard MA, Ho SY, Beilman DW, Shapiro B.
+\newblock Empirical calibrated radiocarbon sampler: a tool for incorporating
+  radiocarbon-date and calibration error into B ayesian phylogenetic analyses
+  of ancient DNA.
+\newblock Molecular ecology resources. 2015;15(1):81--86.
+
+\bibitem{gelman1995avoiding}
+Gelman A, Rubin DB.
+\newblock Avoiding model selection in Bayesian social research.
+\newblock Sociological methodology. 1995;25:165--173.
+
+\bibitem{gelman2014bayesian}
+Gelman A, Carlin JB, Stern HS, Rubin DB. Bayesian data analysis; 2014.
+
+\bibitem{devault2014second}
+Devault AM, Golding GB, Waglechner N, Enk JM, Kuch M, Tien JH, et~al.
+\newblock Second-pandemic strain of Vibrio cholerae from the Philadelphia
+  cholera outbreak of 1849.
+\newblock New England Journal of Medicine. 2014;370(4):334--340.
+
+\bibitem{majander2020ancient}
+Majander K, Pfrengle S, Kocher A, Neukamm J, Du~Plessis L, Pla-D{\'\i}az M,
+  et~al.
+\newblock Ancient bacterial genomes reveal a high diversity of Treponema
+  pallidum strains in early modern Europe.
+\newblock Current Biology. 2020;30(19):3788--3803.
+
+\bibitem{vogels2023phylogeographic}
+Vogels CB, Brackney DE, Dupuis AP, Robich RM, Fauver JR, Brito AF, et~al.
+\newblock Phylogeographic reconstruction of the emergence and spread of
+  Powassan virus in the northeastern United States.
+\newblock Proceedings of the National Academy of Sciences.
+  2023;120(16):e2218012120.
+
+\bibitem{suchard2018bayesian}
+Suchard MA, Lemey P, Baele G, Ayres DL, Drummond AJ, Rambaut A.
+\newblock Bayesian phylogenetic and phylodynamic data integration using {BEAST}
+  1.10.
+\newblock Virus Evolution. 2018;4(1):vey016.
+
+\bibitem{drummond2002estimating}
+Drummond AJ, Nicholls GK, Rodrigo AG, Solomon W.
+\newblock Estimating mutation parameters, population history and genealogy
+  simultaneously from temporally spaced sequence data.
+\newblock Genetics. 2002;161(3):1307--1320.
+
+\bibitem{r2019marginal}
+R~Oaks J, A~Cobb K, N~Minin V, D~Leach{\'e} A.
+\newblock Marginal likelihoods in phylogenetics: a review of methods and
+  applications.
+\newblock Systematic Biology. 2019;68(5):681--697.
+
+\bibitem{baele2013proper}
+Baele G, Li WLS, Drummond AJ, Suchard MA, Lemey P.
+\newblock {Accurate model selection of relaxed molecular clocks in {B}ayesian
+  phylogenetics}.
+\newblock Molecular Biology and Evolution. 2013;30(2):239--243.
+\newblock doi:{10.1093/molbev/mss243}.
+
+\bibitem{wang2014priors}
+Wang Y, Yang Z.
+\newblock Priors in Bayesian phylogenetics.
+\newblock Bayesian phylogenetics: methods, algorithms, and applications. 2014;
+  p. 5--24.
+
+\bibitem{ferreira2008bayesian}
+Ferreira MA, Suchard MA.
+\newblock Bayesian analysis of elapsed times in continuous-time {M}arkov
+  chains.
+\newblock Canadian Journal of Statistics. 2008;36(3):355--368.
+
+\bibitem{tay2023detecting}
+Tay JH, Baele G, Duchene S.
+\newblock Detecting episodic evolution through Bayesian inference of molecular
+  clock models.
+\newblock Molecular Biology and Evolution. 2023;40(10):msad212.
+
+\bibitem{kass1995bayes}
+Kass RE, Raftery AE.
+\newblock Bayes factors.
+\newblock Journal of the American Statistical Association.
+  1995;90(430):773--795.
+
+\bibitem{menardo2019molecular}
+Menardo F, Duch{\^e}ne S, Brites D, Gagneux S.
+\newblock The molecular clock of Mycobacterium tuberculosis.
+\newblock PLoS pathogens. 2019;15(9):e1008067.
+
+\bibitem{biek2015measurably}
+Biek R, Pybus OG, Lloyd-Smith JO, Didelot X.
+\newblock Measurably evolving pathogens in the genomic era.
+\newblock Trends in ecology \& evolution. 2015;30(6):306--313.
+
+\bibitem{duchene2020recovery}
+Duch{\^e}ne S, Ho SY, Carmichael AG, Holmes EC, Poinar H.
+\newblock The recovery, interpretation and use of ancient pathogen genomes.
+\newblock Current Biology. 2020;30(19):R1215--R1231.
+
+\bibitem{spyrou2019ancient}
+Spyrou MA, Bos KI, Herbig A, Krause J.
+\newblock Ancient pathogen genomics as an emerging tool for infectious disease
+  research.
+\newblock Nature Reviews Genetics. 2019;20(6):323--340.
+
+\bibitem{ho2020dating}
+Ho SY, Duch{\^e}ne S.
+\newblock Dating the emergence of human pathogens.
+\newblock Science. 2020;368(6497):1310--1311.
 
 \end{thebibliography}

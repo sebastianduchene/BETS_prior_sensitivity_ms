@@ -175,7 +175,7 @@
 % Title must be 250 characters or less.
 \begin{flushleft}
 {\Large
-\textbf\newline{Untangling temporal signal and the phylodynamic threshold of microbial genome data} % Please use "sentence case" for title and headings (capitalize only the first word in a title (or heading), the first word in a subtitle (or subheading), and any proper nouns).
+\textbf\newline{Untangling temporal signal for calibrating the molecular clock of microbes} % Please use "sentence case" for title and headings (capitalize only the first word in a title (or heading), the first word in a subtitle (or subheading), and any proper nouns).
 }
 \newline
 % Insert author names, affiliations and corresponding author email (do not include titles, positions, or degrees).
@@ -241,9 +241,9 @@ Most parameters of the phylogenetic model have individual prior probability dist
 
 \section*{Results}
 \subsection*{Empirical data analyses}
-We collected genome sequences from three microbial data sets that have been shown to have temporal signal using Bayesian phylogenetic methods. The data sets were: \textit{Vibrio cholerae} \cite{devault2014second}, the bacterium responsible for cholera; \textit{Powassan virus (POWV)} \cite{majander2020ancient}, a tick-borne virus; and \textit{Treponema pallidum} \cite{vogels2023phylogeographic}, the bacterium that causes syphilis. The \textit{V. cholerae} and \textit{T. pallidum} data sets involve ancient samples. We analysed the data sets using BETS under a coalescent tree prior with constant population size and two possible clock models; a strict and an uncorrelated relaxed clock with an underlying lognormal distribution. Our choice of the constant coalescent tree prior is based on statistical convenience, as it is fully parametric, and its simplicity, rather than describing a biological process. We set up our analyses in BEAST1.10 \cite{suchard2018bayesian} and calculated log marginal likelihoods with and without sampling times for each combination of molecular clock model and tree prior. 
+We collected genome sequences from three microbial data sets that have been shown to have temporal signal using Bayesian phylogenetic methods. The data sets were: \textit{Vibrio cholerae} \cite{devault2014second}, the bacterium responsible for cholera; \textit{Powassan virus (POWV)} \cite{majander2020ancient}, a tick-borne virus; and \textit{Treponema pallidum} \cite{vogels2023phylogeographic}, the bacterium that causes syphilis. The \textit{V. cholerae} and \textit{T. pallidum} data sets involve ancient samples. We analysed the data sets using BETS under a coalescent tree prior with constant population size and two possible clock models; a strict and an uncorrelated relaxed clock with an underlying log-normal distribution. Our choice of the constant coalescent tree prior is based on statistical convenience, as it is fully parametric, and its simplicity, rather than describing a biological process. We set up our analyses in BEAST1.10 \cite{suchard2018bayesian} and calculated log marginal likelihoods with and without sampling times for each combination of molecular clock model and tree prior. 
 
-To investigate the impact of the tree prior we considered different (hyper) prior distributions for the effective population size, $\Phi$, the only parameter in the constant-size coalescent. This parameter is referred to as a \textit{scale parameter} for time because large values imply more dispersion (the molecular clock rate is also a scale parameter), and it is typically assigned a $1/\Phi$ prior distribution, which is the Jeffrey's prior that is uninformative and invariant to reparameterisation  \cite{drummond2002estimating}. This prior has attractive attributes because it maximises the signal from the data, but it is an improper distribution (it does not integrate to one over its domain, because $\int_{0}^{\infty} \frac{1}{x}$ is undefined), a problem for model comparison using Bayes factors, because marginal likelihood calculations require that all priors be proper distributions \cite{r2019marginal, baele2013proper}. Instead, we selected three prior distributions, an exponential, $\Gamma$, and Log-Normal, that have been used in recent literature as shown in Table \ref{table:prior_distros_on_Phi}.
+To investigate the impact of the tree prior we considered different (hyper) prior distributions for the effective population size, $\Phi$, the only parameter in the constant-size coalescent. This parameter is referred to as a \textit{scale parameter} for time because large values imply more dispersion (the molecular clock rate is also a scale parameter), and it is typically assigned a $1/\Phi$ prior distribution, which is the Jeffrey's prior that is uninformative and invariant to reparameterisation  \cite{drummond2002estimating}. This prior has attractive attributes because it maximises the signal from the data, but it is an improper distribution (it does not integrate to one over its domain, because $\int_{0}^{\infty} \frac{1}{x}$ is undefined), a problem for model comparison using Bayes factors, because marginal likelihood calculations require that all priors be proper distributions \cite{r2019marginal, baele2013proper}. Instead, we selected three prior distributions, an exponential, $\Gamma$, and log-normal, that have been used in recent literature as shown in Table \ref{table:prior_distros_on_Phi}.
 
 Our rationale for using different prior distributions on $\Phi$ is its impact on parameters that pertain to the molecular clock. Under the constant coalescent process, $\Phi$ is the single parameter in most implementations. Because it is associated with the genetic diversity and population size, it is expected that large values of $\Phi$ will result in a time to the most recent common ancestor that is older than if $\Phi$ is small. Thus a constant coalescent tree prior with a prior for $\Phi$ that favours large values will elicit old node times. The prior on $\Phi$ will also have an impact on the evolutionary rate for two key reasons. First, by impacting the overall age of the tree, it will also impact the length of time over which the sequence data evolved. Second, the default prior for the evolutionary rate in BEAST1.10 is a Gamma ($\Gamma$) distribution with shape ($\alpha$) of 0.5 and beta ($\beta$, also known as the `rate') equal to the tree length (sum of all branch lengths) \cite{wang2014priors, ferreira2008bayesian}. In this software, this prior is known as the CTMC-rate reference prior and its mean value is 0.5 / tree length, meaning that it is indirectly impacted by $\Phi$. 
 
@@ -256,29 +256,46 @@ Our rationale for using different prior distributions on $\Phi$ is its impact on
 		\hline
 		Exponential & mean, $\mu=1.0$\\
         $\Gamma$ (Gamma) & shape, $\kappa=0.001$; scale, $\theta=1000$\\
-		Log-Normal & mean, $\mu=1.0$; standard deviation $\sigma=5.0$\\
+		Log-normal & mean, $\mu=1.0$; standard deviation $\sigma=5.0$\\
 	\end{tabular}
 \end{center}
 \end{table}
 
-The \textit{V. cholerae} data set displayed overwhelming support for temporal signal (Table \ref{table:empirical_bayes_factors}, regardless of the molecular clock model and prior on $\Phi$, with log Bayes factors of over 200. Note that a log Bayes factor of 3.2 corresponds to a model posterior probability $\approx$0.95 \cite{tay2023detecting}, and signifying 'very strong support`, following Kass and Raftery \cite{kass1995bayes}. \textcolor{red}{we need to state the imapct of the clock model and of the prior. If we focus on the clock models, it appears that strict clock in most cases detected temporal signal better, except for the gamma prior. Then the priors have a measurable impact on the Bayes factors, and marginal likelihoods, even if they ultimately did not impact the detection of temporal signal.}
+The \textit{V. cholerae} data set displayed overwhelming support for temporal signal (Table \ref{table:empirical_bayes_factors} and Fig \ref{figure:polygon_plots}), regardless of the molecular clock model and prior on $\Phi$, with log Bayes factors of over 200. Note that a log Bayes factor of 3.2 corresponds to a model posterior probability $\approx$0.95 \cite{tay2023detecting}, and is considered as `very strong support', following Kass and Raftery \cite{kass1995bayes}. Although in this data set the prior on $\Phi$ did not impact model selection for detecting temporal signal, it did impact the magnitude of the Bayes factors.
+
+For our other two data sets the impact of the prior on model selection was evident. For \textit{Poawassan virus} the $\Gamma$ and log-normal priors on $\Phi$ suggested strong temporal signal, whereas the exponential prior strongly favoured the exclusion of sampling times, according to the strict and relaxed molecular clock models. In our analyses of the \textit{T. pallidum}  data set we found that the strict molecular clock suggested temporal signal, according to all priors on $\Phi$, although with very strong evidence only for the exponential prior and only `positive evidence' for the $\Gamma$ and log-normal priors. Under the relaxed molecular clock model all priors had very strong support against temporal signal.
 
 \begin{table}[h]
     \caption{Log Bayes factors between isochronous and heterochronous models for each dataset, separated by prior on population size}
     \begin{center}
     \label{table:empirical_bayes_factors}
-    \begin{tabular}{| c + c | c | c | }
+    \begin{tabular}{ c + c | c | c }
     \hline
-    \multicolumn{1}{|c|}{\bf Species; Clock Model} & Exponential & Gamma & Lognormal \\ \thickhline
-    $Vibrio$ $cholerae;$ $Strict$ $Clock$ & 355.18 & 379.63 & 382.10 \\ \hline
-    $Vibrio$ $cholerae;$ $Relaxed$ $Clock$ & 208.97 & 439.63 & 219.60 \\  \hline
-    $Orthoflavivirus$ $powassanense;$ $Strict$ $Clock$ & -80.63 & 32.67 & 50.29 \\ \hline
-    $Orthoflavivirus$ $powassanense;$ $Relaxed$ $Clock$ & -221.94 & 18.79  & 27.23 \\ \hline
-    $Treponema$ $pallidum;$ $Strict$ $Clock$ & 105.80 & 2.17 & 1.85 \\ \hline
-    $Treponema$ $pallidum;$ $Relaxed$ $Clock$ & -34.37 & -1474.14 & -34.04 \\ \hline
+    \multicolumn{1}{c|}{\bf Species; Clock Model} & Exponential & Gamma & Log-normal\\ \thickhline
+    \textit{Vibrio cholerae}; $Strict$ $Clock$ & 355.18 & 379.63 & 382.10 \\ \hline
+    \textit{Vibrio cholerae}; $Relaxed$ $Clock$ & 208.97 & 439.63 & 219.60 \\  \hline
+    \textit{Powassan virus (POWV)}; $Strict$ $Clock$ & -80.63 & 32.67 & 50.29 \\ \hline
+    \textit{Powassan virus (POWV)}; $Relaxed$ $Clock$ & -221.94 & 18.79  & 27.23 \\ \hline
+    \textit{Treponema pallidum}; $Strict$ $Clock$ & 105.80 & 2.17 & 1.85 \\ \hline
+    \textit{Treponema pallidum}; $Relaxed$ $Clock$ & -34.37 & -1474.14 & -34.04 \\ \hline
     \end{tabular}
     \end{center}
 \end{table}
+
+\textcolor{red}{Close here by stating that, as expected, the choice of the prior has an impact on model selection. This effect, however, is less notable in data sets with high information content. In particular, here the cholera data set has more informative sites and wider sampling window, relative to the root height than the others. It has also been shown to have strong clocklike behaviour in the past.}
+
+\subsection*{Simulations based on empirical data}
+\textcolor{red}{Describe here how we did the simulations (by sampling trees from the posterior, etc...) and the results below}
+
+\begin{figure}
+	%	\begin{center}
+		\includegraphics[width=12cm]{sandbox_figures/polygon_plot.pdf}\newline
+		\vspace{-0.5cm}
+		\caption{\textbf{Relative log marginal likelihoods of empirical data sets}. The polygons represent the relative log marginal likelihoods of each microbe dataset under a different population size prior, analysed with four different configurations. Het (heterochronous) includes sampling, while iso (isochronous) does not include any sampling times. SC is strict clock and UCLD is the uncorrelated lognormal relaxed clock. Red represents an exponential hyperprior on the population size, blue is a gamma hyperprior, and green is a lognormal hyperprior.}
+		\label{figure:polygon_plots}
+		%	\end{center}
+\end{figure}
+
 
 \begin{table}[!ht]
 \begin{adjustwidth}{-2.25in}{0in}
@@ -322,15 +339,6 @@ $Treponema$ $pallidum;$ $Best\ clock\ model$ & &  &  \\ \hline
 \end{adjustwidth}
 \end{table}
 
-Pending.
-\begin{figure}
-%	\begin{center}
-		\includegraphics[width=12cm]{sandbox_figures/polygon_plot.pdf}\newline
-		\vspace{-0.5cm}
-		\caption{A polygon plot of the relative log marginal likelihoods of each microbe dataset under a different population size prior, analysed with four different configurations. Het (heterochronous) includes sampling, while iso (isochronous) does not include any sampling times. SC is strict clock and UCLD is the uncorrelated lognormal relaxed clock. Red represents an exponential hyperprior on the population size, blue is a gamma hyperprior, and green is a lognormal hyperprior.}
-		\label{figure:polygon_plots}
-%	\end{center}
-\end{figure}
 
 
 \section*{Discussion}
@@ -354,15 +362,6 @@ Powassan: 14650 (het), ~4800 (iso)
 Treponema: 110-150 (ucld), running (sc) (edited)
 }
 \textcolor{red}{John, can you add details on how we ran these, e.g. MCMC length, marginal likelihood settings, subst. model and parameter priors}
-
-% Place figure captions after the first paragraph in which they are cited.
-\begin{figure}[!h]
-	\caption{{\bf Bold the figure title.}
-		Figure caption text here, please use this space for the figure panel descriptions instead of using subfigure commands. A: Lorem ipsum dolor sit amet. B: Consectetur adipiscing elit.}
-	\label{fig1}
-\end{figure}
-
-
 
 \section*{Supporting information}
 
