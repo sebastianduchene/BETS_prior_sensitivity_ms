@@ -263,15 +263,15 @@ Our rationale for using different prior distributions on $\Phi$ is its impact on
 
 The \textit{V. cholerae} data set displayed overwhelming support for temporal signal (Table \ref{table:empirical_bayes_factors} and Fig \ref{figure:polygon_plots}), regardless of the molecular clock model and prior on $\Phi$, with log Bayes factors of over 200. Note that a log Bayes factor of 3.2 corresponds to a model posterior probability $\approx$0.95 \cite{tay2023detecting}, and is considered as `very strong support', following Kass and Raftery \cite{kass1995bayes}. Although in this data set the prior on $\Phi$ did not impact model selection for detecting temporal signal, it did impact the magnitude of the Bayes factors.
 
-For our other two data sets the impact of the prior on model selection was evident. For \textit{Poawassan virus} the $\Gamma$ and log-normal priors on $\Phi$ suggested strong temporal signal, whereas the exponential prior strongly favoured the exclusion of sampling times, according to the strict and relaxed molecular clock models. In our analyses of the \textit{T. pallidum}  data set we found that the strict molecular clock suggested temporal signal, according to all priors on $\Phi$, although with very strong evidence only for the exponential prior and only `positive evidence' for the $\Gamma$ and log-normal priors. Under the relaxed molecular clock model all priors had very strong support against temporal signal.
+For our other two data sets the impact of the prior on model selection was evident. For \textit{Poawassan virus} the $\Gamma$ and log-normal priors on $\Phi$ suggested strong temporal signal, whereas the exponential prior strongly favoured the exclusion of sampling times, according to the strict and relaxed molecular clock models. In our analyses of the \textit{T. pallidum}  data set we found support for temporal signal under the strict molecular clock, according to all priors on $\Phi$, although with very strong evidence only for the exponential prior and `positive evidence' for the $\Gamma$ and log-normal priors. Under the relaxed molecular clock model all priors had very strong support against temporal signal.
 
 \begin{table}[h]
-    \caption{Log Bayes factors between isochronous and heterochronous models for each dataset, separated by prior on population size}
+    \caption{Log Bayes factors between isochronous and heterochronous models for each dataset, separated by prior on effective population size, $\Phi$}
     \begin{center}
     \label{table:empirical_bayes_factors}
-    \begin{tabular}{ c + c | c | c }
+    \begin{tabular}{| c + c | c | c |}
     \hline
-    \multicolumn{1}{c|}{\bf Species; Clock Model} & Exponential & Gamma & Log-normal\\ \thickhline
+    \multicolumn{1}{|c|}{\bf Species; Clock Model} & Exponential & Gamma & Log-normal\\ \thickhline
     \textit{Vibrio cholerae}; $Strict$ $Clock$ & 355.18 & 379.63 & 382.10 \\ \hline
     \textit{Vibrio cholerae}; $Relaxed$ $Clock$ & 208.97 & 439.63 & 219.60 \\  \hline
     \textit{Powassan virus (POWV)}; $Strict$ $Clock$ & -80.63 & 32.67 & 50.29 \\ \hline
@@ -282,19 +282,92 @@ For our other two data sets the impact of the prior on model selection was evide
     \end{center}
 \end{table}
 
-\textcolor{red}{Close here by stating that, as expected, the choice of the prior has an impact on model selection. This effect, however, is less notable in data sets with high information content. In particular, here the cholera data set has more informative sites and wider sampling window, relative to the root height than the others. It has also been shown to have strong clocklike behaviour in the past.}
-
-\subsection*{Simulations based on empirical data}
-\textcolor{red}{Describe here how we did the simulations (by sampling trees from the posterior, etc...) and the results below}
-
 \begin{figure}
-	%	\begin{center}
+	\begin{center}
 		\includegraphics[width=12cm]{sandbox_figures/polygon_plot.pdf}\newline
 		\vspace{-0.5cm}
-		\caption{\textbf{Relative log marginal likelihoods of empirical data sets}. The polygons represent the relative log marginal likelihoods of each microbe dataset under a different population size prior, analysed with four different configurations. Het (heterochronous) includes sampling, while iso (isochronous) does not include any sampling times. SC is strict clock and UCLD is the uncorrelated lognormal relaxed clock. Red represents an exponential hyperprior on the population size, blue is a gamma hyperprior, and green is a lognormal hyperprior.}
+		\caption{\textbf{Relative log marginal likelihoods of empirical data sets}. The polygons represent the relative log marginal likelihoods of each microbe dataset under a different effective population size ($\Phi$) prior, analysed with four different configurations. Het (heterochronous) includes sampling, while iso (isochronous) does not include any sampling times. SC is strict clock and UCLD is the uncorrelated lognormal relaxed clock. Red represents an exponential hyperprior on the effective population size, blue is a gamma hyperprior, and green is a log-normal hyperprior.}
 		\label{figure:polygon_plots}
-		%	\end{center}
+	\end{center}
 \end{figure}
+
+Our empirical data analyses overall demonstrate that the choice of prior has an impact on Bayesian model selection and support. The \textit{V. cholerae} data set had a posterior that was less sensitive to the prior for key parameters, such as the evolutionary rate (Supplementary material), and in this data set the detection of temporal signal was also more robust to the prior. Moreover, this data set has been shown to have clear clocklike behaviour in root-to-tip regressions and date randomisation tests \cite{duchene2016genome}. 
+
+\subsection*{Simulation experiments}
+To understand the impact of the prior on Bayesian model selection we conducted a set of simulation experiments where the data generating process is well understood. We conducted simulations under four possible conditions; a strict or relaxed molecular clock, and where the phylogenetic time-trees could be were heterochronous or isochronous. Data from heterochronous trees are sampled from a measurably evolving population and are expected to display temporal signal, whereas those from isochronous trees are not from a measurably evolving population (the time-trees are ultrametric) and should not display temporal signal. 
+
+For data generated under heterochronous time-trees we found that 10 out of 10 simulation replicates were correctly classified as having temporal signal, using a log Bayes factor of 3.2 (Table \ref{table:heterochronous_simulations_unbounded}). \textcolor{red}{Continue explaining results for other clock models and for the isochronous, where the Gamma and log-normal prior incorrectly detect temporal signal, but only with the strict (corect clock), not the best clock though...}
+
+\begin{table}[h!]
+	\caption{\textbf{Correctly classified simulation replicates under heterochronous trees.} A total of ten simulations were generated in each case, under heterochronous trees, such that they are expected to display temporal signal. A number of ten represents perfect classification according to the Bayesian evaluation of temporal signal, BETS and a log Bayes factor of at least 3.2 (strong evidence for temporal signal). The rows correspond to three possible priors on the effective population size of the constant-size coalescent, $\Phi$. The `Best clock model' is where the best model is heterochronous analysis, regardless of the clock model.}
+	\begin{center}
+		\label{table:heterochronous_simulations_unbounded}
+		\begin{tabular}{| c + c | c | c |}
+			\hline
+			\multicolumn{1}{|c|}{\bf True clock model; clock model in analysis} & Exponential & $\Gamma$ & Log-normal\\ \thickhline
+			Strict clock; Strict clock     & 10 & 10 & 10 \\ \hline
+			Strict clock; Relaxed clock    & 10 & 10 & 10 \\ \hline
+			Strict clock; Best clock model & 10 & 10 & 10 \\ \hline
+			Relaxed clock; Strict clock    & NA & NA & NA \\ \hline
+			Relaxed clock; Strict clock    & NA & NA & NA \\ \hline
+			Relaxed clock; Best clock model & NA & NA & NA \\ \hline		
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{table}[h!]
+	\caption{\textbf{Correctly classified simulation replicates under isochronous trees.} A total of ten simulations were generated in each case, under isochronous trees, such that they are not expected to support temporal signal. A number of ten represents perfect classification according to the Bayesian evaluation of temporal signal, BETS and a log Bayes factor of at least -3.2 (strong evidence against temporal signal). The rows correspond to three possible priors on the effective population size of the constant-size coalescent, $\Phi$. The `Best clock model' is where the highest log marginal likelihood is for an isochronous analysis, regardless of the clock model.}
+	\begin{center}
+		\label{table:isochronous_simulations_unbounded}
+		\begin{tabular}{| c + c | c | c |}
+			\hline
+			\multicolumn{1}{|c|}{\bf True clock model; clock model in analysis} & Exponential & $\Gamma$ & Log-normal\\ \thickhline
+			Strict clock; Strict clock     & 10 & 0 & 0 \\ \hline
+			Strict clock; Relaxed clock    & 10 & 10 & 10 \\ \hline
+			Strict clock; Best clock model & 10 & 0 & 0 \\ \hline
+			Relaxed clock; Strict clock    & NA & NA & NA \\ \hline
+			Relaxed clock; Strict clock    & NA & NA & NA \\ \hline
+			Relaxed clock; Best clock model& NA & NA & NA \\ \hline		
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{table}[h!]
+	\caption{\textbf{Correctly classified simulation replicates under heterochronous trees using hard bounds on the root height.} Rows and columns are identical to those of Table \ref{table:heterochronous_simulations_unbounded}, but here the heterochronous analyses include an explicit prior on the root height, via a uniform distribution between 0 and 5.0.}
+	\begin{center}
+		\label{table:heterochronous_simulations_bounded}
+		\begin{tabular}{| c + c | c | c |}
+			\hline
+			\multicolumn{1}{|c|}{\bf True clock model; clock model in analysis} & Exponential & $\Gamma$ & Log-normal\\ \thickhline
+			Strict clock; Strict clock     & 10 & 10 & 10 \\ \hline
+			Strict clock; Relaxed clock    & 10 & 10 & 10 \\ \hline
+			Strict clock; Best clock model & 10 & 10 & 10 \\ \hline
+			Relaxed clock; Strict clock    & NA & NA & NA \\ \hline
+			Relaxed clock; Strict clock    & NA & NA & NA \\ \hline
+			Relaxed clock; Best clock model & NA & NA & NA \\ \hline		
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{table}[h!]
+	\caption{\textbf{Correctly classified simulation replicates under isochronous trees.} Rows and columns are identical to those of Table \ref{table:isochronous_simulations_unbounded}, but here the heterochronous analyses include an explicit prior on the root height, via a uniform distribution between 0 and 5.0.}
+	\begin{center}
+		\label{table:heterochronous_simulations_bounded}
+		\begin{tabular}{| c + c | c | c |}
+			\hline
+			\multicolumn{1}{|c|}{\bf True clock model; clock model in analysis} & Exponential & $\Gamma$ & Log-normal\\ \thickhline
+			Strict clock; Strict clock     & 10 & 10 & 10 \\ \hline
+			Strict clock; Relaxed clock    & 10 & 10 & 10 \\ \hline
+			Strict clock; Best clock model & 10 & 10 & 10 \\ \hline
+			Relaxed clock; Strict clock    & NA & NA & NA \\ \hline
+			Relaxed clock; Strict clock    & NA & NA & NA \\ \hline
+			Relaxed clock; Best clock model& NA & NA & NA \\ \hline		
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
+
 
 
 \begin{table}[!ht]
@@ -363,6 +436,10 @@ Treponema: 110-150 (ucld), running (sc) (edited)
 }
 \textcolor{red}{John, can you add details on how we ran these, e.g. MCMC length, marginal likelihood settings, subst. model and parameter priors}
 
+\subsection*{Simulation experiments}
+\textcolor{red}{Sebastian, describe small simulations. That is, that the population size was 1.0, and what the clock rates were. For the analyses say that in the isochronous the clock rate was fixed to the correct value to ensure that the units are correct, etc... Also describe how we designed the bounds here and what they do}
+
+
 \section*{Supporting information}
 
 % Include only the SI item label in the paragraph heading. Use the \nameref{label} command to cite SI items in the text.
@@ -375,7 +452,7 @@ Treponema: 110-150 (ucld), running (sc) (edited)
 {\bf Lorem ipsum.} Maecenas convallis mauris sit amet sem ultrices gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus consectetur pellentesque.
 
 \paragraph*{S1 File.}
-\label{S1_File}
+\label{file:S1_File}
 {\bf Lorem ipsum.}  Maecenas convallis mauris sit amet sem ultrices gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus consectetur pellentesque.
 
 \section*{Acknowledgments}
