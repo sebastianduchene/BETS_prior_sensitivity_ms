@@ -235,7 +235,7 @@ There exist several statistical tests to determine whether a population has meas
 
 Date randomisation tests consist of fitting a molecular clock to the data after permuting the sampling times, a procedure that is repeated multiple times to obtain a `null' distribution of the evolutionary rate \cite{ramsden2009hantavirus}. The data are considered to have temporal signal if the evolutionary rate estimated with the correct sampling times falls outside such `null' distribution \cite{ramsden2009hantavirus,duchene2015performance}.
 
-BETS (Bayesian Evaluation of Temporal Signal) is a fully Bayesian approach for assessing temporal signal \cite{duchene2020bayesian}, by treating it as a model selection problem. The premise of the test is that the data in question should have higher statistical fit when the sampling times are included than when they are not. In practice, the data are analysed with their correct sampling times and with all samples assigned the same date (typically at present), while keeping the rest of the phylogenetic model the same, including the molecular clock, tree prior and substitution model. The marginal likelihood is calculated in each case to compute Bayes factors, which quantify the amount of evidence for one model over another, here that with sampling times vs that without. A major advantage of BETS is that can consider the full model and it naturally accommodates important sources of uncertainty, including that due to radio carbon dating of ancient DNA studies \cite{molak2015empirical}. 
+BETS (Bayesian Evaluation of Temporal Signal) is a fully Bayesian approach for assessing temporal signal \cite{duchene2020bayesian}, by treating it as a model selection problem. The premise of the test is that the data in question should have higher statistical fit when the sampling times are included than when they are not. In practice, the data are analysed with their correct sampling times and with all samples assigned the same date (typically at present), while keeping the rest of the phylogenetic model the same, including the molecular clock, tree prior and substitution model. The marginal likelihood is calculated in each case to compute log Bayes factors, which quantify the amount of evidence for one model over another, here that with sampling times vs that without. A major advantage of BETS is that can consider the full model and it naturally accommodates important sources of uncertainty, including that due to radio carbon dating of ancient DNA studies \cite{molak2015empirical}. 
 
 Most parameters of the phylogenetic model have individual prior probability distributions that can be chosen by the user, for example, the evolutionary rate, or the transition-to-transversion ratio of the HKY substitution model. The phylogenetic tree topology and branch lengths are usually assigned a branching process, such as a coalescent or birth-death process. These tree priors implicitly impose a prior probability distribution on the ages of nodes and the tree length, and therefore may inadvertently impose highly informative calibration priors. Moreover, model selection, as is the case with BETS, can be sensitive to the choice of prior, even if the posterior is not \cite{gelman1995avoiding, gelman2014bayesian}. Here we investigate whether such prior information can overwhelm the signal from the data and potentially mislead Bayesian tests of temporal signal.
 
@@ -245,18 +245,18 @@ We collected genome sequences from three microbial data sets that have been show
 
 To investigate the impact of the tree prior we considered different (hyper) prior distributions for the effective population size, $\Phi$, the only parameter in the constant-size coalescent. This parameter is referred to as a \textit{scale parameter} for time because large values imply more dispersion (the molecular clock rate is also a scale parameter), and it is typically assigned a $1/\Phi$ prior distribution, which is the Jeffrey's prior that is uninformative and invariant to reparameterisation  \cite{drummond2002estimating}. This prior has attractive attributes because it maximises the signal from the data, but it is an improper distribution (it does not integrate to one over its domain, because $\int_{0}^{\infty} \frac{1}{x}$ is undefined), a problem for model comparison using Bayes factors, because marginal likelihood calculations require that all priors be proper distributions \cite{r2019marginal, baele2013proper}. Instead, we selected three prior distributions, an exponential, $\Gamma$, and log-normal, that have been used in recent literature as shown in Table \ref{table:prior_distros_on_Phi}.
 
-Our rationale for using different prior distributions on $\Phi$ is its impact on parameters that pertain to the molecular clock. Under the constant coalescent process, $\Phi$ is the single parameter in most implementations. Because it is associated with the genetic diversity and population size, it is expected that large values of $\Phi$ will result in a time to the most recent common ancestor that is older than if $\Phi$ is small. Thus a constant coalescent tree prior with a prior for $\Phi$ that favours large values will elicit old node times. The prior on $\Phi$ will also have an impact on the evolutionary rate for two key reasons. First, by impacting the overall age of the tree, it will also impact the length of time over which the sequence data evolved. Second, the default prior for the evolutionary rate in BEAST1.10 is a Gamma ($\Gamma$) distribution with shape ($\alpha$) of 0.5 and beta ($\beta$, also known as the `rate') equal to the tree length (sum of all branch lengths) \cite{wang2014priors, ferreira2008bayesian}. In this software, this prior is known as the CTMC-rate reference prior and its mean value is 0.5 / tree length, meaning that it is indirectly impacted by $\Phi$. 
+Our rationale for using different prior distributions on $\Phi$ is its impact on parameters that pertain to the molecular clock. Under the constant coalescent process, $\Phi$ is the single parameter in most implementations. Because it is associated with the genetic diversity and population size, it is expected that large values of $\Phi$ will result in a time to the most recent common ancestor that is older than if $\Phi$ is small. Thus a constant coalescent tree prior with a prior for $\Phi$ that favours large values will elicit old node times. The prior on $\Phi$ will also have an impact on the evolutionary rate for two key reasons. First, by impacting the overall age of the tree, it will also impact the length of time over which the sequence data evolved. Second, the default prior for the evolutionary rate in BEAST1.10 is a Gamma ($\Gamma$) distribution with shape ($\alpha$) of 0.5 and beta ($\beta$, also known as the `rate') equal to the tree length (sum of all branch lengths) \cite{wang2014priors, ferreira2008bayesian}. In this software, this prior is known as the CTMC-rate reference prior and its mean value is $0.5 / T$, where $T$=tree length, meaning that it is indirectly impacted by $\Phi$. 
 
 \begin{table}[h]
 \caption{Prior distributions for the effective population size, $\Phi$ parameter}
 \begin{center} 
 	\label{table:prior_distros_on_Phi}
-	\begin{tabular}{c|c}
-		Probability distribution function & Parameters\\
-		\hline
-		Exponential & mean, $\mu=1.0$\\
-        $\Gamma$ (Gamma) & shape, $\kappa=0.001$; scale, $\theta=1000$\\
-		Log-normal & mean, $\mu=1.0$; standard deviation $\sigma=5.0$\\
+	\begin{tabular}{| c + c |}
+    \hline
+		\multicolumn{1}{|c|}{Probability distribution function} & Parameters\\ \thickhline
+		Exponential & mean, $\mu=1.0$\\ \hline
+        $\Gamma$ (Gamma) & shape, $\kappa=0.001$; scale, $\theta=1000$\\ \hline
+		Log-normal & mean, $\mu=1.0$; standard deviation $\sigma=5.0$\\ \hline
 	\end{tabular}
 \end{center}
 \end{table}
@@ -284,7 +284,7 @@ For our other two data sets the impact of the prior on model selection was evide
 
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=12cm]{sandbox_figures/polygon_plot.pdf}\newline
+		\includegraphics[width=8cm]{sandbox_figures/polygon_plot.pdf}\newline
 		\vspace{-0.5cm}
 		\caption{\textbf{Relative log marginal likelihoods of empirical data sets}. The polygons represent the relative log marginal likelihoods of each microbe dataset under a different effective population size ($\Phi$) prior, analysed with four different configurations. Het (heterochronous) includes sampling, while iso (isochronous) does not include any sampling times. SC is strict clock and UCLD is the uncorrelated lognormal relaxed clock. Red represents an exponential hyperprior on the effective population size, blue is a gamma hyperprior, and green is a log-normal hyperprior.}
 		\label{figure:polygon_plots}
@@ -294,12 +294,12 @@ For our other two data sets the impact of the prior on model selection was evide
 Our empirical data analyses overall demonstrate that the choice of prior has an impact on Bayesian model selection and support. The \textit{V. cholerae} data set had a posterior that was less sensitive to the prior for key parameters, such as the evolutionary rate (Supplementary material), and in this data set the detection of temporal signal was also more robust to the prior. Moreover, this data set has been shown to have clear clocklike behaviour in root-to-tip regressions and date randomisation tests \cite{duchene2016genome}. 
 
 \subsection*{Simulation experiments}
-To understand the impact of the prior on Bayesian model selection we conducted a set of simulation experiments where the data generating process is well understood. We conducted simulations under four possible conditions; a strict or relaxed molecular clock, and where the phylogenetic time-trees could be were heterochronous or isochronous. Data from heterochronous trees are sampled from a measurably evolving population and are expected to display temporal signal, whereas those from isochronous trees are not from a measurably evolving population (the time-trees are ultrametric) and should not display temporal signal. 
+To understand the impact of the prior on Bayesian model selection we conducted a set of simulation experiments where the data generating process is well understood. We conducted simulations under four possible conditions; a strict or relaxed molecular clock, and where the phylogenetic time-trees were heterochronous or isochronous. Data from heterochronous trees are sampled from a measurably evolving population and are expected to display temporal signal, whereas those from isochronous trees are not from a measurably evolving population (the time-trees are ultrametric) and should not display temporal signal. 
 
-For data generated under heterochronous time-trees we found that 10 out of 10 simulation replicates were correctly classified as having temporal signal, using a log Bayes factor of 3.2 (Table \ref{table:heterochronous_simulations_unbounded}). \textcolor{red}{Continue explaining results for other clock models and for the isochronous, where the Gamma and log-normal prior incorrectly detect temporal signal, but only with the strict (corect clock), not the best clock though...}
+For data generated under heterochronous time-trees, we found that 10 out of 10 simulation replicates were correctly classified as having temporal signal, using a log Bayes factor of at least 3.2 (Table \ref{table:heterochronous_simulations_unbounded}). This perfect classification was supported regardless of the prior on $\Phi$ and the molecular clock model. 
 
 \begin{table}[h!]
-	\caption{\textbf{Correctly classified simulation replicates under heterochronous trees.} A total of ten simulations were generated in each case, under heterochronous trees, such that they are expected to display temporal signal. A number of ten represents perfect classification according to the Bayesian evaluation of temporal signal, BETS and a log Bayes factor of at least 3.2 (strong evidence for temporal signal). The rows correspond to three possible priors on the effective population size of the constant-size coalescent, $\Phi$. The `Best clock model' is where the best model is heterochronous analysis, regardless of the clock model.}
+	\caption{\textbf{Correctly classified simulation replicates under heterochronous trees.} A total of ten simulations were generated in each case, under heterochronous trees, such that they are expected to display temporal signal. A number of ten represents perfect classification according to the Bayesian evaluation of temporal signal, BETS and a log Bayes factor of at least 3.2 (strong evidence for temporal signal). The rows correspond to three possible priors on the effective population size of the constant-size coalescent, $\Phi$. The `Best clock model' is a situation where we consider the best heterochronous and isochronous model, take their log Bayes factor, and determine temporal signal if it is at least 3.2.}
 	\begin{center}
 		\label{table:heterochronous_simulations_unbounded}
 		\begin{tabular}{| c + c | c | c |}
@@ -308,15 +308,23 @@ For data generated under heterochronous time-trees we found that 10 out of 10 si
 			Strict clock; Strict clock     & 10 & 10 & 10 \\ \hline
 			Strict clock; Relaxed clock    & 10 & 10 & 10 \\ \hline
 			Strict clock; Best clock model & 10 & 10 & 10 \\ \hline
-			Relaxed clock; Strict clock    & NA & NA & NA \\ \hline
-			Relaxed clock; Strict clock    & NA & NA & NA \\ \hline
-			Relaxed clock; Best clock model & NA & NA & NA \\ \hline		
+			Relaxed clock; Strict clock    & 10 & 10 & 10 \\ \hline
+			Relaxed clock; Relaxed clock    & 10 & 10 & 10 \\ \hline
+			Relaxed clock; Best clock model & 10 & 10 & 10 \\ \hline		
 		\end{tabular}
 	\end{center}
 \end{table}
 
+For our data generated under isochronous trees, which by definition have no temporal signal, we found perfect classification under the exponential prior on $\Phi$ under both clock models (Table \ref{table:isochronous_simulations_unbounded}). For most analyses under the $\Gamma$ and log-normal priors on $\Phi$ we found that BETS incorrectly supported the presence of temporal signal. The exceptions were for analyses of data analysed under a relaxed clock, whether they were simulated under a strict or relaxed clock. 
+
+A result that appears perplexing occurs under the best molecular clock model for the $\Gamma$ and log-normal priors on $\Phi$. Here we take the log Bayes factor of the best heterochronous model vs the best isochronous model and the classification error increases, relative to the relaxed clock only. This phenomenon occurs because the incorrect inclusion of sampling times can mislead molecular clock model selection. As a case in point one of the simulation replicates under a relaxed molecular clock and an isochronous tree (with no temporal signal) had the following log marginal likelihoods; -4109.87 for the heterochronous analyses with a strict clock, -4117.06 for the isochronous analyses with a strict clock, -4124.35 for the heterochronous analyses with a relaxed clock, and -4118.29 for the isochronous analyses with a relaxed clock. The log Bayes factors under the relaxed clock have strong evidence against temporal signal (log Bayes factor=-6.06 for heterochronous vs isochronous), whereas the opposite is true for the strict clock (log Bayes factor=7.19). However, the best heterochronous model has substantially stronger support than the best isochronous model (here the strict or relaxed clock, which whose log marginal likelihoods differ by only 1.3 units). It is also worthwhile to note that in general, analyses under the relaxed clock tended to have fewer classification errors (for data sets with no temporal signal) than the strict clock, regardless of the true molecular clock model used to generate the data.
+
+Overall, our simulation results demonstrate that detecting temporal signal when it is not present, which is akin to a type I error, is more common under some prior configurations (here the $\Gamma$ and log-normal priors on $\Phi$) than the opposite (failing to detect temporal signal when it is present). To investigate this finding we visualised the resulting trees. 
+\textcolor{red}{say that the when we include sampling times (and shouldn't) we get very, very long trees and really low rates, so it is a problem to classify them wrong. Use one example as needed. Include polygon figures here and reference above...}
+
+
 \begin{table}[h!]
-	\caption{\textbf{Correctly classified simulation replicates under isochronous trees.} A total of ten simulations were generated in each case, under isochronous trees, such that they are not expected to support temporal signal. A number of ten represents perfect classification according to the Bayesian evaluation of temporal signal, BETS and a log Bayes factor of at least -3.2 (strong evidence against temporal signal). The rows correspond to three possible priors on the effective population size of the constant-size coalescent, $\Phi$. The `Best clock model' is where the highest log marginal likelihood is for an isochronous analysis, regardless of the clock model.}
+	\caption{\textbf{Correctly classified simulation replicates under isochronous trees.} A total of ten simulations were generated in each case, under isochronous trees, such that they are not expected to support temporal signal. A number of ten represents perfect classification according to the Bayesian evaluation of temporal signal, BETS and a log Bayes factor of at most -3.2 (strong evidence against temporal signal). The rows correspond to three possible priors on the effective population size of the constant-size coalescent, $\Phi$. The `Best clock model' is a situation where we consider the best heterochronous and isochronous model, take their log Bayes factor, and determine a lack of temporal signal if it is at most -3.2.}
 	\begin{center}
 		\label{table:isochronous_simulations_unbounded}
 		\begin{tabular}{| c + c | c | c |}
@@ -325,9 +333,9 @@ For data generated under heterochronous time-trees we found that 10 out of 10 si
 			Strict clock; Strict clock     & 10 & 0 & 0 \\ \hline
 			Strict clock; Relaxed clock    & 10 & 10 & 10 \\ \hline
 			Strict clock; Best clock model & 10 & 0 & 0 \\ \hline
-			Relaxed clock; Strict clock    & NA & NA & NA \\ \hline
-			Relaxed clock; Strict clock    & NA & NA & NA \\ \hline
-			Relaxed clock; Best clock model& NA & NA & NA \\ \hline		
+			Relaxed clock; Strict clock    & 10 & 0 & 0 \\ \hline
+			Relaxed clock; Relaxed clock    & 10 & 9 & 9 \\ \hline
+			Relaxed clock; Best clock model& 10 & 0 & 1 \\ \hline		
 		\end{tabular}
 	\end{center}
 \end{table}
@@ -342,9 +350,9 @@ For data generated under heterochronous time-trees we found that 10 out of 10 si
 			Strict clock; Strict clock     & 10 & 10 & 10 \\ \hline
 			Strict clock; Relaxed clock    & 10 & 10 & 10 \\ \hline
 			Strict clock; Best clock model & 10 & 10 & 10 \\ \hline
-			Relaxed clock; Strict clock    & NA & NA & NA \\ \hline
-			Relaxed clock; Strict clock    & NA & NA & NA \\ \hline
-			Relaxed clock; Best clock model & NA & NA & NA \\ \hline		
+			Relaxed clock; Strict clock    & 10 & 10 & 10 \\ \hline
+			Relaxed clock; Relaxed clock    & 10 & 10 & 10 \\ \hline
+			Relaxed clock; Best clock model & 10 & 10 & 10 \\ \hline		
 		\end{tabular}
 	\end{center}
 \end{table}
@@ -352,20 +360,19 @@ For data generated under heterochronous time-trees we found that 10 out of 10 si
 \begin{table}[h!]
 	\caption{\textbf{Correctly classified simulation replicates under isochronous trees.} Rows and columns are identical to those of Table \ref{table:isochronous_simulations_unbounded}, but here the heterochronous analyses include an explicit prior on the root height, via a uniform distribution between 0 and 5.0.}
 	\begin{center}
-		\label{table:heterochronous_simulations_bounded}
+		\label{table:isorochronous_simulations_bounded}
 		\begin{tabular}{| c + c | c | c |}
 			\hline
 			\multicolumn{1}{|c|}{\bf True clock model; clock model in analysis} & Exponential & $\Gamma$ & Log-normal\\ \thickhline
 			Strict clock; Strict clock     & 10 & 10 & 10 \\ \hline
 			Strict clock; Relaxed clock    & 10 & 10 & 10 \\ \hline
 			Strict clock; Best clock model & 10 & 10 & 10 \\ \hline
-			Relaxed clock; Strict clock    & NA & NA & NA \\ \hline
-			Relaxed clock; Strict clock    & NA & NA & NA \\ \hline
-			Relaxed clock; Best clock model& NA & NA & NA \\ \hline		
+			Relaxed clock; Strict clock    & 10 & 10 & 10 \\ \hline
+			Relaxed clock; Relaxed clock    & 10 & 10 & 10 \\ \hline
+			Relaxed clock; Best clock model& 10 & 10 & 10 \\ \hline		
 		\end{tabular}
 	\end{center}
 \end{table}
-
 
 
 
@@ -413,6 +420,22 @@ $Treponema$ $pallidum;$ $Best\ clock\ model$ & &  &  \\ \hline
 \end{table}
 
 
+\includegraphics[width=8cm]{sandbox_figures/het_sims.pdf}\newline
+\includegraphics[width=8cm]{sandbox_figures/iso_sims.pdf}\newline
+
+\begin{flushleft}
+\textcolor{red}{To do: Plot densities of clock rates, root height, tree length, coefficient of rate variation. One panel per data set, show density for the three priors and the same colours as the fig above.}
+            \includegraphics[width=13cm]{sandbox_figures/cholera_density_plot.pdf}\newline
+            Density plots of the clock rate, root height, tree length, and coeffcient of rate variation of cholera.
+            \includegraphics[width=13cm]{sandbox_figures/powv_density_plot.pdf}\newline
+            Density plots of the clock rate, root height, tree length, and coeffcient of rate variation of powassan virus.
+            \includegraphics[width=13cm]{sandbox_figures/treponema_density_plot.pdf}\newline
+            Density plots of the clock rate, root height, tree length, and coeffcient of rate variation of treponema palladium.
+            \end{flushleft}
+
+
+
+
 
 \section*{Discussion}
 
@@ -423,21 +446,30 @@ Whole genome sequencing and ancient DNA are two technologies that have dramatica
 
 \section*{Materials and methods}
 \subsection*{Empirical data}
-\textcolor{red}{John, please add information about the three sequence data sets here. I found some notes we took on site patterns and others:
-Site patterns
-Empirical
-Cholera: 1392
-Powassan: 3457
-Treponema: 844
-Simulations
-Cholera: 640-710 (ucld), 580-710 (sc)
-Powassan: 14650 (het), ~4800 (iso)
-Treponema: 110-150 (ucld), running (sc) (edited)
-}
-\textcolor{red}{John, can you add details on how we ran these, e.g. MCMC length, marginal likelihood settings, subst. model and parameter priors}
+We selected three different datasets to evaluate temporal signal, cholera (), powassan virus (), and treponema (). These varied in their timespans, number of informative sites, and number of sequences. The most sparse dataset was treponema, where sampling dates spanned 481 years, with 28 sequences each containing 1500 sites. There were 319 sequences with 11193 sites for powassan virus, spanning 5 years of sampling times. Finally, we had 122 cholera sequences with 1757 sites across 73 years of sampling.
+For the empirical data there are 1392 unique site patterns in cholera, 3457 in powassan virus, and 840 in treponema. In the simulated data, there are 580-710 (SC) and 640-710 (UCLD) in cholera, there are 110-150 in both SC and UCLD for treponema. For the powassan virus SC, there are $\sim$4800 in the isochronous trees and $\sim$14650 in the heterchronous trees.
+
+\begin{table}[h]
+\caption{Unique Site Patterns for each dataset and clock model}
+\begin{center} 
+	\label{table:prior_distros_on_Phi}
+	\begin{tabular}{| c + c | c | c |}
+    \hline
+		\multicolumn{1}{|c|}{Dataset} & Empirical & Simulation (SC) & Simulations (UCLD) \\ \thickhline
+		Cholera & 1392 & 580-710 & 640-710\\ \hline
+        Powassan Virus & 3457 & $\sim$4800 (iso) & $\sim$14650 (het)\\ \hline
+		Treponema & 840 & 110-150 & 110-150\\ \hline
+	\end{tabular}
+\end{center}
+\end{table}
+
+We sampled the posterior distribution using Markov chain Monte Carlo as implemented in BEAST1.10. The chain length was $10^{8}$ steps, sampling every $10^3$ to draw a total of $10^4$ samples. The prior for the evolutionary rate of the strict clock was a CTMC rate reference prior (i.e. a $\Gamma(\alpha=0.5, \beta=T$, with $T=$ tree length, and mean=$\alpha/\beta$). For the log-normal distribution of the relaxed clock we also used the CTMC rate reference prior for the mean rate (known as the ucld.mean in the program) and an exponential prior with mean 0.33 for the standard deviation (the ucld.stdev in the program). For the tree prior we used a constant-size coalescent with population size, $\Phi$ with three possible priors, as described in Table \ref{table:prior_distros_on_Phi}. In all cases we used the HKY+$\Gamma_4$ substitution model, with the default priors in BEAST1.10.
+
+To calculate log marginal likelihoods we used generalised stepping-stone \cite{baele2016genealogical,fan2011choosing}. This method requires a working distribution for all parameters, including the tree prior, for which we used the matching coalescent model. We set 100 path steps between the unnormalised posterior and the working distribution, following equally spaced intervals from a $\beta(0.3, 1.0)$ distribution. For each step we ran a chain length of 2$\times 10^{6}$ steps.
 
 \subsection*{Simulation experiments}
 \textcolor{red}{Sebastian, describe small simulations. That is, that the population size was 1.0, and what the clock rates were. For the analyses say that in the isochronous the clock rate was fixed to the correct value to ensure that the units are correct, etc... Also describe how we designed the bounds here and what they do}
+
 
 
 \section*{Supporting information}
