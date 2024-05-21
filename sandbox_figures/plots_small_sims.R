@@ -34,8 +34,8 @@ plot_polygon <- function(mle_values, pal, index){
   #points(, col = pal, cex=1)
 }
 
-draw_plot <- function(mle_values, set, prior, colours = c("black", "grey"), main = "main title"){
-  par(mar = c(3, 2, 5, 6), pty="s")
+draw_plot <- function(mle_values, set, prior, colours = c("purple", "orange"), main = "main title"){
+  par(mar = c(3, 2, 4, 2), pty="s")
   plot(0, 0, ylim = c(-13, 13), xlim = c(-13, 13), type = "n", bty = "n", 
        yaxt = "n", xaxt = "n", ylab = "", xlab = "", main = main)
   mtext("Strict clock (SC)", side = 3, las = 1, cex = 0.8)
@@ -56,8 +56,6 @@ draw_plot <- function(mle_values, set, prior, colours = c("black", "grey"), main
   for (index in 11:20){
     plot_polygon(mle_values, pal = colours[2], index)    
   }
-  
-  legend(12,-1.5, legend=c("Bounds on rootheight","No bounds on rootheight"), col=c(colours[1],colours[2]),pch=c(1,1),lty=0,xpd=TRUE,cex=1,pt.cex=1.2)
 }
 
 for (set in c(1,3)) {
@@ -88,12 +86,16 @@ logn_mles <- rescale_mles(logn_mles)
 gamma_mles <- mle_gamma[grep("hetero", rownames(mle_gamma)),]
 gamma_mles <- rescale_mles(gamma_mles)
 
-pdf("het_sims.pdf",width=4.5,height=9)
-par(mfrow = (c(3,1))) 
+pdf("het_sims.pdf",width=9,height=4.5)
+par(mfrow = (c(1,3))) 
 draw_plot(exp_mles,set,priors[1], main = "Heterochronous, exponential prior")
 draw_plot(logn_mles,set,priors[3], main = "Heterochronous, lognormal prior")
+legend(-16.5,-17, legend=c("Bounds on rootheight","No bounds on rootheight"), col=c("purple", "orange"),
+       pch=c(1,1),lty=1,xpd=TRUE,cex=1,pt.cex=0, horiz = TRUE,bty = "n",text.width=c(13,8),seg.len=1.5)
 draw_plot(gamma_mles,set,priors[2], main = "Heterochronous, gamma prior")
 dev.off()
+
+set <- 3
 
 exp_mles <- mle_exp[grep("ultra", rownames(mle_exp)),]
 exp_mles <- rescale_mles(exp_mles)
@@ -104,10 +106,12 @@ logn_mles <- rescale_mles(logn_mles)
 gamma_mles <- mle_gamma[grep("ultra", rownames(mle_gamma)),]
 gamma_mles <- rescale_mles(gamma_mles)
 
-pdf("iso_sims.pdf",width=4.5,height=9)
-par(mfrow = c(3,1))
+pdf("iso_sims.pdf",width=9,height=4.5)
+par(mfrow = c(1,3))
 draw_plot(exp_mles,set,priors[1], main = "Isochronous, exponential prior")
 draw_plot(logn_mles,set,priors[3], main = "Isochronous, lognormal prior")
+legend(-16.5,-17, legend=c("Bounds on rootheight","No bounds on rootheight"), col=c("purple", "orange"),
+       pch=c(1,1),lty=1,xpd=TRUE,cex=1,pt.cex=0, horiz = TRUE,bty = "n",text.width=c(13,8),seg.len=1.5)
 draw_plot(gamma_mles,set,priors[2], main = "Isochronous, gamma prior")
 dev.off()
 
