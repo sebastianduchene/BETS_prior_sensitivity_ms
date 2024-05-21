@@ -139,8 +139,3 @@ dev.off()
 #plot_polygon(gamma_mles, pal[2])
 #plot_polygon(logn_mles, pal[3], 1)
 #legend(12,-1.5, legend=c("Exponential","Gamma","Lognormal"), col=c(pal[1],pal[2],pal[3]),pch=c(1,1,1),lty=1,xpd=TRUE,cex=1,pt.cex=1.2)
-
-
-
-
-

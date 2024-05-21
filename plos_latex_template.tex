@@ -452,7 +452,7 @@ $Vibrio$ $cholerae;$ $Strict$ $Clock$ & 10 & 0 & 0 \\ \hline
 $Vibrio$ $cholerae;$ $Relaxed$ $Clock$ & 0 & 0 & 0 \\  \hline
 $Vibrio$ $cholerae;$ $Best\ clock\ model$ & 0 & 0 & 0 \\  \hline
 $Orthoflavivirus$ $powassanense;$ $Strict$ $Clock$ &  &  &  \\ \hline
-$Orthoflavivirus$ $powassanense;$ $Relaxed$ $Clock$ &  &  &  \\  \hline
+$Orthofl6avivirus$ $powassanense;$ $Relaxed$ $Clock$ &  &  &  \\  \hline
 $Treponema$ $pallidum;$ $Strict$ $Clock$ & 10 & 10 & 10 \\ \hline
 $Treponema$ $pallidum;$ $Relaxed$ $Clock$ & 10 &  0 &  0 \\ \hline
 $Treponema$ $pallidum;$ $Best\ clock\ model$ & &  &  \\ \hline
@@ -463,13 +463,28 @@ $Treponema$ $pallidum;$ $Best\ clock\ model$ & &  &  \\ \hline
 
 
 \textcolor{red}{To do: Plot densities of clock rates, root height, tree length, coefficient of rate variation. One panel per data set, show density for the three priors and the same colours as the fig above.}
-            \includegraphics[width=13cm]{sandbox_figures/cholera_density_plot.pdf}\newline
-            Density plots of the clock rate, root height, tree length, and coeffcient of rate variation of cholera.
-            \includegraphics[width=13cm]{sandbox_figures/powv_density_plot.pdf}\newline
-            Density plots of the clock rate, root height, tree length, and coeffcient of rate variation of powassan virus.
-            \includegraphics[width=13cm]{sandbox_figures/treponema_density_plot.pdf}\newline
-            Density plots of the clock rate, root height, tree length, and coeffcient of rate variation of treponema palladium.
 
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=13cm]{sandbox_figures/cholera_density_plot.pdf}\newline
+		\vspace{-0.5cm}
+		\caption{\textbf{Densities of key statistics of cholera empirical data.} The clock rate, root height, tree length, and coefficient of rate variation are shown under three priors on $\Phi$, exponential (red), gamma (blue), and lognormal (green).}
+	\end{center}
+\end{figure}
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=13cm]{sandbox_figures/powv_density_plot.pdf}\newline
+		\vspace{-0.5cm}
+		\caption{\textbf{Densities of key statistics of powassan virus empirical data under.} The clock rate, root height, tree length, and coefficient of rate variation are shown under three priors on $\Phi$, exponential (red), gamma (blue), and lognormal (green).}
+	\end{center}
+\end{figure}
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=13cm]{sandbox_figures/treponema_density_plot.pdf}\newline
+		\vspace{-0.5cm}
+		\caption{\textbf{Densities of key statistics of treponema palladium empirical data under.} The clock rate, root height, tree length, and coefficient of rate variation are shown under three priors on $\Phi$, exponential (red), gamma (blue), and lognormal (green).}
+	\end{center}
+\end{figure}
 
 
 
@@ -485,8 +500,8 @@ Whole genome sequencing and ancient DNA are two technologies that have dramatica
 
 \section*{Materials and methods}
 \subsection*{Empirical data}
-We selected three different datasets to evaluate temporal signal, cholera (), powassan virus (), and treponema (). These varied in their timespans, number of informative sites, and number of sequences. The most sparse dataset was treponema, where sampling dates spanned 481 years, with 28 sequences each containing 1500 sites. There were 319 sequences with 11193 sites for powassan virus, spanning 5 years of sampling times. Finally, we had 122 cholera sequences with 1757 sites across 73 years of sampling.
-For the empirical data there are 1392 unique site patterns in cholera, 3457 in powassan virus, and 840 in treponema. In the simulated data, there are 580-710 (SC) and 640-710 (UCLD) in cholera, there are 110-150 in both SC and UCLD for treponema. For the powassan virus SC, there are $\sim$4800 in the isochronous trees and $\sim$14650 in the heterchronous trees.
+We selected three different datasets to evaluate temporal signal, cholera \cite{devault2014second}, powassan virus \cite{vogels2023phylogeographic}, and treponema \cite{majander2020ancient}. These varied in their timespans, number of informative sites, and number of sequences. The most sparse dataset was treponema, where sampling dates spanned 481 years (1534.5 to 2016), with 28 sequences each containing 1500 sites. There were 319 sequences with 11193 sites for powassan virus, spanning 24 years of sampling times (1995 to 2019). Finally, we had 122 cholera sequences with 1757 sites across 73 years of sampling (1937 to 2010).
+For the empirical data there are 1392 unique site patterns in cholera, 3457 in powassan virus, and 840 in treponema. In the simulated data, there are 580-710 (SC) and 640-710 (UCLD) in cholera, and 110-150 in both SC and UCLD for treponema. For the powassan virus SC, there are $\sim$4800 in the isochronous trees and $\sim$14650 in the heterchronous trees.
 
 \begin{table}[h]
 \caption{Unique Site Patterns for each dataset and clock model}
@@ -508,6 +523,7 @@ To calculate log marginal likelihoods we used generalised stepping-stone \cite{b
 
 \subsection*{Simulation experiments}
 \textcolor{red}{Sebastian, describe small simulations. That is, that the population size was 1.0, and what the clock rates were. For the analyses say that in the isochronous the clock rate was fixed to the correct value to ensure that the units are correct, etc... Also describe how we designed the bounds here and what they do}
+
 
 
 
