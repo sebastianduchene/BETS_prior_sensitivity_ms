@@ -376,7 +376,6 @@ In Fig \ref{figure:heterochronous_tree_distortion} we show an example of phyloge
 	\end{center}
 \end{figure}
 
-
 Defining a suitable prior for the parameters of the tree prior requires careful attention. The prior on $\Phi$ (or other parameters) should not favour implausibly node heights. However, understanding the interplay between the parameters of the tree prior and the resulting tree topologies and node heights is not necessarily trivial, particularly when the tree prior involves multiple parameters (e.g. the Bayesian skyride). A pragmatic solution is to include additional prior information in the form of hard bounds on the root-height or the molecular clock rate. To this end, we investigated the effect of including a uniform prior between 0.0 and 5.0 units of time for the tree height, meaning that trees that are older than 5.0 units have a prior probability of 0.0. Importantly, the trees under which we generated our simulations had root heights of around 2.0 units of time, and thus the hard bound of 5.0 allows for trees that are over twice as old as the truth. 
 
 Setting hard bounds on the root height resulted in perfect classification accuracy for both, the heterochronous and isochronous simulation (Table \ref{table:heterochronous_simulations_bounded} and Fig \ref{figure:heterochronous_polygons}, and Table \ref{table:isorochronous_simulations_bounded} and Fig \ref{figure:ultrametric_polygons}, respectively). The improvement in classification for data sets with no temporal signal is likely because the hard bounds limit the tree extension phenomenon and thereby including sampling times imposes a penalty on the log marginal likelihood (see polygons in Fig \ref{figure:heterochronous_polygons}).
@@ -460,6 +459,14 @@ $Treponema$ $pallidum;$ $Best\ clock\ model$ & &  &  \\ \hline
 \end{adjustwidth}
 \end{table}
 
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[width=13cm]{sandbox_figures/prior_predictive_plots.pdf}\newline
+		\vspace{-0.5cm}
+		\caption{\textbf{Pending.}}
+	\end{center}
+    \label{figure:correlation_plots}
+\end{figure}
 
 
 \textcolor{red}{To do: Plot densities of clock rates, root height, tree length, coefficient of rate variation. One panel per data set, show density for the three priors and the same colours as the fig above.}
