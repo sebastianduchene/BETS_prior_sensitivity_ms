@@ -3,11 +3,15 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: plos_latex_template.aux
 The style file: plos2015.bst
 Database file #1: References.bib
-Repeated entry---line 810 of file References.bib
+"{" immediately follows a field name---line 61 of file References.bib
+ :   number={4},@article
+ :                      {ho2011skyline,
+I'm skipping whatever remains of this entry
+Repeated entry---line 831 of file References.bib
  : @article{r2019marginal
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1255 of file References.bib
+Repeated entry---line 1276 of file References.bib
  : @article{wang2014priors
  :                        ,
 I'm skipping whatever remains of this entry
@@ -15,45 +19,46 @@ Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 35 entries,
+Warning--empty year in devault2014second
+You've used 38 entries,
             3058 wiz_defined-function locations,
-            857 strings with 12037 characters,
-and the built_in function-call counts, 69608 in all, are:
-= -- 8828
-> -- 552
+            870 strings with 12477 characters,
+and the built_in function-call counts, 74051 in all, are:
+= -- 9397
+> -- 592
 < -- 4
-+ -- 278
-- -- 138
-* -- 5946
-:= -- 7534
-add.period$ -- 138
-call.type$ -- 35
++ -- 298
+- -- 148
+* -- 6307
+:= -- 8016
+add.period$ -- 149
+call.type$ -- 38
 change.case$ -- 2
 chr.to.int$ -- 0
-cite$ -- 35
-duplicate$ -- 5661
-empty$ -- 6620
-format.name$ -- 173
-if$ -- 16165
+cite$ -- 39
+duplicate$ -- 6072
+empty$ -- 7034
+format.name$ -- 186
+if$ -- 17198
 int.to.chr$ -- 0
-int.to.str$ -- 35
-missing$ -- 343
-newline$ -- 177
-num.names$ -- 35
-pop$ -- 537
+int.to.str$ -- 38
+missing$ -- 370
+newline$ -- 192
+num.names$ -- 38
+pop$ -- 583
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 564
+skip$ -- 604
 stack$ -- 0
-substring$ -- 14104
-swap$ -- 904
+substring$ -- 14909
+swap$ -- 973
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 372
-width$ -- 37
-write$ -- 386
-(There were 2 error messages)
+warning$ -- 1
+while$ -- 400
+width$ -- 40
+write$ -- 418
+(There were 3 error messages)

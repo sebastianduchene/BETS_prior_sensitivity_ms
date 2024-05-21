@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.15)  10 MAY 2024 17:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.15)  17 MAY 2024 16:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -457,8 +457,7 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 )
 (./plos_latex_template.aux
 
-LaTeX Warning: Label `table:heterochronous_simulations_bounded' multiply define
-d.
+LaTeX Warning: Label `table:prior_distros_on_Phi' multiply defined.
 
 )
 \openout1 = `plos_latex_template.aux'.
@@ -586,13 +585,76 @@ Package microtype Info: Loading generic protrusion settings for font family
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-<sandbox_figures/polygon_plot.pdf, id=95, 433.62pt x 578.16pt>
+<sandbox_figures/polygon_plot.pdf, id=95, 578.16pt x 252.945pt>
 File: sandbox_figures/polygon_plot.pdf Graphic file (type pdf)
 <use sandbox_figures/polygon_plot.pdf>
 Package pdftex.def Info: sandbox_figures/polygon_plot.pdf  used on input line 2
 87.
-(pdftex.def)             Requested size: 341.43306pt x 455.26811pt.
- [4] [5 <./sandbox_figures/polygon_plot.pdf>]
+(pdftex.def)             Requested size: 398.33858pt x 174.27364pt.
+
+Overfull \hbox (18.92108pt too wide) in paragraph at lines 287--289
+ []  
+ []
+
+[4]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<sandbox_figures/het_sims.pdf, id=112, 650.43pt x 325.215pt>
+File: sandbox_figures/het_sims.pdf Graphic file (type pdf)
+<use sandbox_figures/het_sims.pdf>
+Package pdftex.def Info: sandbox_figures/het_sims.pdf  used on input line 320.
+(pdftex.def)             Requested size: 398.33858pt x 199.17484pt.
+
+Overfull \hbox (18.92108pt too wide) in paragraph at lines 320--322
+ []  
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5 <./sandbox_figures/polygon_plot.pdf>] [6 <./sandbox_figures/het_sims.pdf>]
+<sandbox_figures/iso_sims.pdf, id=143, 650.43pt x 325.215pt>
+File: sandbox_figures/iso_sims.pdf Graphic file (type pdf)
+<use sandbox_figures/iso_sims.pdf>
+Package pdftex.def Info: sandbox_figures/iso_sims.pdf  used on input line 350.
+(pdftex.def)             Requested size: 398.33858pt x 199.17484pt.
+
+Overfull \hbox (18.92108pt too wide) in paragraph at lines 350--352
+ []  
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<sandbox_figures/tree_distortion_ultrametric.pdf, id=146, 578.16pt x 505.89pt>
+File: sandbox_figures/tree_distortion_ultrametric.pdf Graphic file (type pdf)
+<use sandbox_figures/tree_distortion_ultrametric.pdf>
+Package pdftex.def Info: sandbox_figures/tree_distortion_ultrametric.pdf  used 
+on input line 361.
+(pdftex.def)             Requested size: 426.79134pt x 373.44185pt.
+
+Overfull \hbox (47.37384pt too wide) in paragraph at lines 361--363
+ []  
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[7]
+<sandbox_figures/tree_distortion_heterochronous.pdf, id=158, 578.16pt x 505.89p
+t>
+File: sandbox_figures/tree_distortion_heterochronous.pdf Graphic file (type pdf
+)
+<use sandbox_figures/tree_distortion_heterochronous.pdf>
+Package pdftex.def Info: sandbox_figures/tree_distortion_heterochronous.pdf  us
+ed on input line 372.
+(pdftex.def)             Requested size: 426.79134pt x 373.44185pt.
+
+Overfull \hbox (47.37384pt too wide) in paragraph at lines 372--374
+ []  
+ []
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -602,10 +664,35 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6] [7] [8] (./plos_latex_template.bbl [9] [10])
+[8 <./sandbox_figures/iso_sims.pdf>]
+<sandbox_figures/cholera_density_plot.pdf, id=183, 650.43pt x 505.89pt>
+File: sandbox_figures/cholera_density_plot.pdf Graphic file (type pdf)
+<use sandbox_figures/cholera_density_plot.pdf>
+Package pdftex.def Info: sandbox_figures/cholera_density_plot.pdf  used on inpu
+t line 466.
+(pdftex.def)             Requested size: 369.88582pt x 287.69643pt.
+<sandbox_figures/powv_density_plot.pdf, id=184, 650.43pt x 505.89pt>
+File: sandbox_figures/powv_density_plot.pdf Graphic file (type pdf)
+<use sandbox_figures/powv_density_plot.pdf>
+Package pdftex.def Info: sandbox_figures/powv_density_plot.pdf  used on input l
+ine 468.
+(pdftex.def)             Requested size: 369.88582pt x 287.69643pt.
+<sandbox_figures/treponema_density_plot.pdf, id=185, 650.43pt x 505.89pt>
+File: sandbox_figures/treponema_density_plot.pdf Graphic file (type pdf)
+<use sandbox_figures/treponema_density_plot.pdf>
+Package pdftex.def Info: sandbox_figures/treponema_density_plot.pdf  used on in
+put line 470.
+(pdftex.def)             Requested size: 369.88582pt x 287.69643pt.
+ [9 <./sandbox_figures/tree_distortion_ultrametric.pdf>]
+Overfull \vbox (138.54942pt too high) has occurred while \output is active []
 
+
+[10 <./sandbox_figures/tree_distortion_heterochronous.pdf> <./sandbox_figures/c
+holera_density_plot.pdf>] [11] [12 <./sandbox_figures/powv_density_plot.pdf>]
+[13 <./sandbox_figures/treponema_density_plot.pdf>] [14]
+(./plos_latex_template.bbl [15] [16]) 
 AED: lastpage setting LastPage
-[11] (./plos_latex_template.aux)
+[17] (./plos_latex_template.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -613,13 +700,13 @@ Package rerunfilecheck Info: File `plos_latex_template.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 14951 strings out of 478287
- 237758 string characters out of 5849289
- 599239 words of memory out of 5000000
- 32788 multiletter control sequences out of 15000+600000
- 475985 words of font info for 89 fonts, out of 8000000 for 9000
+ 15033 strings out of 478287
+ 240448 string characters out of 5849289
+ 592401 words of memory out of 5000000
+ 32838 multiletter control sequences out of 15000+600000
+ 476317 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,11n,76p,1251b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,11n,76p,1591b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
@@ -632,10 +719,10 @@ msfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pf
 b>
-Output written on plos_latex_template.pdf (11 pages, 192882 bytes).
+Output written on plos_latex_template.pdf (17 pages, 420564 bytes).
 PDF statistics:
- 251 PDF objects out of 1000 (max. 8388607)
- 209 compressed objects within 3 object streams
- 72 named destinations out of 1000 (max. 500000)
- 20486 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 357 PDF objects out of 1000 (max. 8388607)
+ 295 compressed objects within 3 object streams
+ 87 named destinations out of 1000 (max. 500000)
+ 20521 words of extra memory for PDF output out of 20736 (max. 10000000)
 

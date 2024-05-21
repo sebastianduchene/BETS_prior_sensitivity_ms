@@ -102,7 +102,7 @@ Gelman A, Carlin JB, Stern HS, Rubin DB. Bayesian data analysis; 2014.
 Devault AM, Golding GB, Waglechner N, Enk JM, Kuch M, Tien JH, et~al.
 \newblock Second-pandemic strain of Vibrio cholerae from the Philadelphia
   cholera outbreak of 1849.
-\newblock New England Journal of Medicine. 2014;370(4):334--340.
+\newblock New England Journal of Medicine;370(4).
 
 \bibitem{majander2020ancient}
 Majander K, Pfrengle S, Kocher A, Neukamm J, Du~Plessis L, Pla-D{\'\i}az M,
@@ -172,6 +172,12 @@ Duch{\^e}ne S, Holt KE, Weill FX, Le~Hello S, Hawkey J, Edwards DJ, et~al.
 \newblock Genome-scale rates of evolutionary change in bacteria.
 \newblock Microbial genomics. 2016;2(11):e000094.
 
+\bibitem{ho2011skyline}
+Ho SY, Shapiro B.
+\newblock Skyline-plot methods for estimating demographic history from
+  nucleotide sequences.
+\newblock Molecular ecology resources. 2011;11(3):423--434.
+
 \bibitem{menardo2019molecular}
 Menardo F, Duch{\^e}ne S, Brites D, Gagneux S.
 \newblock The molecular clock of Mycobacterium tuberculosis.
@@ -197,5 +203,16 @@ Spyrou MA, Bos KI, Herbig A, Krause J.
 Ho SY, Duch{\^e}ne S.
 \newblock Dating the emergence of human pathogens.
 \newblock Science. 2020;368(6497):1310--1311.
+
+\bibitem{baele2016genealogical}
+Baele G, Lemey P, Suchard MA.
+\newblock Genealogical working distributions for {B}ayesian model testing with
+  phylogenetic uncertainty.
+\newblock Systematic Biology. 2016;65(2):250--264.
+
+\bibitem{fan2011choosing}
+Fan Y, Wu R, Chen MH, Kuo L, Lewis PO.
+\newblock Choosing among partition models in {B}ayesian phylogenetics.
+\newblock Molecular Biology and Evolution. 2011;28(1):523--532.
 
 \end{thebibliography}
