@@ -3,15 +3,15 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: plos_latex_template.aux
 The style file: plos2015.bst
 Database file #1: References.bib
-"{" immediately follows a field name---line 61 of file References.bib
+"{" immediately follows a field name---line 94 of file References.bib
  :   number={4},@article
  :                      {ho2011skyline,
 I'm skipping whatever remains of this entry
-Repeated entry---line 831 of file References.bib
+Repeated entry---line 864 of file References.bib
  : @article{r2019marginal
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1276 of file References.bib
+Repeated entry---line 1309 of file References.bib
  : @article{wang2014priors
  :                        ,
 I'm skipping whatever remains of this entry
@@ -20,45 +20,45 @@ Reallocated global_strs (elt_size=200001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty year in devault2014second
-You've used 38 entries,
+You've used 41 entries,
             3058 wiz_defined-function locations,
-            870 strings with 12477 characters,
-and the built_in function-call counts, 74051 in all, are:
-= -- 9397
-> -- 592
+            886 strings with 12981 characters,
+and the built_in function-call counts, 78260 in all, are:
+= -- 9939
+> -- 620
 < -- 4
-+ -- 298
-- -- 148
-* -- 6307
-:= -- 8016
-add.period$ -- 149
-call.type$ -- 38
++ -- 312
+- -- 155
+* -- 6648
+:= -- 8479
+add.period$ -- 161
+call.type$ -- 41
 change.case$ -- 2
 chr.to.int$ -- 0
-cite$ -- 39
-duplicate$ -- 6072
-empty$ -- 7034
-format.name$ -- 186
-if$ -- 17198
+cite$ -- 42
+duplicate$ -- 6454
+empty$ -- 7432
+format.name$ -- 196
+if$ -- 18177
 int.to.chr$ -- 0
-int.to.str$ -- 38
-missing$ -- 370
-newline$ -- 192
-num.names$ -- 38
-pop$ -- 583
+int.to.str$ -- 41
+missing$ -- 395
+newline$ -- 207
+num.names$ -- 41
+pop$ -- 621
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 604
+skip$ -- 641
 stack$ -- 0
-substring$ -- 14909
-swap$ -- 973
+substring$ -- 15684
+swap$ -- 1041
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 400
-width$ -- 40
-write$ -- 418
+while$ -- 427
+width$ -- 43
+write$ -- 451
 (There were 3 error messages)
