@@ -432,7 +432,7 @@ An obvious finding is a natural positive correlation between tree length, root h
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[width=14cm]{sandbox_figures/prior_tree_distros.pdf}\newline
+		\includegraphics[width=13.5cm]{sandbox_figures/prior_tree_distros.pdf}\newline
 		\vspace{-0.5cm}
 		\caption{\textbf{Marginal prior distributions of root heights, given the prior on $\theta$}. Each panel corresponds to a different prior on $\theta$, as described on Table \ref{table:prior_distros_on_Phi} (Exponential($\mu=1.0$), Log-normal($\mu=$1.0, $\sigma=$5.0), and $\Gamma(\kappa=0.001, \theta=1000)$). We show five randomly sampled trees from the analysis using sampling times (heterochronous analyses) and overlaid them (similar to densitree plots \cite{bouckaert2010densitree}). The violin plots show the prior densities of the root height and the hollow circles denote 100 randomly drawn samples from the prior. The y-axis is the time from the present and each nrow is in a different scale. Tip nodes are shown with solid grey circles. The densities and trees on the right, in purple, include a hard bound on the tree height in the form of a uniform prior between 0.0 and 5.0 units of time, while those on the left, in orange, do not include an explicit prior on the root height.}
 		\label{figure:prior_tree_distros}
@@ -482,6 +482,21 @@ An obvious finding is a natural positive correlation between tree length, root h
 %end{table}
 
 
+
+\section*{Discussion}
+
+
+
+\textcolor{red}{
+Whole genome sequencing and ancient DNA are two technologies that have dramatically expanded the range of organisms from which we can sample measurably evolving populations. By sequencing complete genomes, instead of individual genes, we can capture more genetic variation overall. In a microbe with an evolutionary rate of about 1$\times 10^{-7}$ subs/site/year (e.g. \textit{M. tuberculosis} \cite{menardo2019molecular}) sampled over a decade would yield on average one substitution for every 1M bases sequenced, with shorter stretches of sequences being mostly uninformative. As a result, many microbes whose evolution was considered too slow to be treated a measurably evolving populations, including many bacteria, are now commonly analysed using frameworks that were thought to be only applicable to rapidly evolving pathogens, such as RNA viruses \cite{biek2015measurably}.}
+
+\textcolor{red}{Ancient DNA has had a profound impact in our understanding of the long-term evolution of many microbial pathogens \cite{duchene2020recovery,spyrou2019ancient}. The inclusion of ancient DNA in molecular evolutionary analyses can substantially broaden the sampling window, and therefore provide invaluable data points for molecular clock calibration because the data can effectively be treated as coming from a measurably evolving population \cite{ho2020dating}.}
+
+\textcolor{red}{Remember to mention the book chapter where we also look at how the prior on root height is affected by the presence or absence of temporal signal. Data sets with temporal signal should see more distance between the prior and the posterior. }
+
+
+
+
 \begin{figure}[!h]
 	\begin{center}
 		\includegraphics[width=13cm]{sandbox_figures/cholera_density_plot.pdf}\newline
@@ -505,20 +520,9 @@ An obvious finding is a natural positive correlation between tree length, root h
 \end{figure}
 
 
-
-
-\section*{Discussion}
-
-\textcolor{red}{
-Whole genome sequencing and ancient DNA are two technologies that have dramatically expanded the range of organisms from which we can sample measurably evolving populations. By sequencing complete genomes, instead of individual genes, we can capture more genetic variation overall. In a microbe with an evolutionary rate of about 1$\times 10^{-7}$ subs/site/year (e.g. \textit{M. tuberculosis} \cite{menardo2019molecular}) sampled over a decade would yield on average one substitution for every 1M bases sequenced, with shorter stretches of sequences being mostly uninformative. As a result, many microbes whose evolution was considered too slow to be treated a measurably evolving populations, including many bacteria, are now commonly analysed using frameworks that were thought to be only applicable to rapidly evolving pathogens, such as RNA viruses \cite{biek2015measurably}.}
-
-\textcolor{red}{Ancient DNA has had a profound impact in our understanding of the long-term evolution of many microbial pathogens \cite{duchene2020recovery,spyrou2019ancient}. The inclusion of ancient DNA in molecular evolutionary analyses can substantially broaden the sampling window, and therefore provide invaluable data points for molecular clock calibration because the data can effectively be treated as coming from a measurably evolving population \cite{ho2020dating}.}
-
-\textcolor{red}{Remember to mention the book chapter where we also look at how the prior on root height is affected by the presence or absence of temporal signal. Data sets with temporal signal should see more distance between the prior and the posterior. }
-
 \section*{Materials and methods}
 \subsection*{Empirical data}
-We selected three different datasets to evaluate temporal signal, cholera \cite{devault2014second}, powassan virus \cite{vogels2023phylogeographic}, and treponema \cite{majander2020ancient}. These varied in their timespans, number of informative sites, and number of sequences. The most sparse dataset was treponema, where sampling dates spanned 481 years (1534.5 to 2016), with 28 sequences each containing 1500 sites. There were 319 sequences with 11193 sites for powassan virus, spanning 24 years of sampling times (1995 to 2019). Finally, we had 122 cholera sequences with 1757 sites across 73 years of sampling (1937 to 2010).
+We selected three different datasets to evaluate temporal signal, cholera \cite{devault2014second}, powassan virus \cite{vogels2023phylogeographic}, and treponema \cite{majander2020ancient}. These varied in their timespans, number of informative sites, and number of sequences. The most sparse dataset was treponema, where sampling dates spanned 481 years (1534.5 to 2016), with 28 sequences each containing 1500 sites. Among these samples, there were only two in the 1500's and two in the 1700's, with the bulk of the samples with the rest of the samples concentrated in the 1900's to 2000's. There were 319 sequences with 11193 sites for powassan virus, spanning 24 years of sampling times (1995 to 2019). Most of the samples were collected after 2010, with only three isolated in 1995. Finally, we had 122 cholera sequences with 1757 sites across 73 years of sampling (1937 to 2010). 
 For the empirical data there are 1392 unique site patterns in cholera, 3457 in powassan virus, and 840 in treponema. In the simulated data, there are 580-710 (SC) and 640-710 (UCLD) in cholera, and 110-150 in both SC and UCLD for treponema. For the powassan virus SC, there are $\sim$4800 in the isochronous trees and $\sim$14650 in the heterchronous trees.
 
 \begin{table}[h]
@@ -544,7 +548,6 @@ To calculate log marginal likelihoods we used generalised stepping-stone \cite{b
 
 
 
-
 \section*{Supporting information}
 
 % Include only the SI item label in the paragraph heading. Use the \nameref{label} command to cite SI items in the text.
@@ -564,6 +567,7 @@ To calculate log marginal likelihoods we used generalised stepping-stone \cite{b
 This work was supported by the Inception program [Investissement d’Avenir grant ANR-16-CONV-0005], the Australian National Health and Medical Research Council [APP1157586], and the Australian Research Council [DE190100805].
 
 \nolinenumbers
+
 
 % Either type in your references using
 % \begin{thebibliography}{}
