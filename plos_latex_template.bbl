@@ -102,7 +102,7 @@ Gelman A, Carlin JB, Stern HS, Rubin DB. Bayesian data analysis; 2014.
 Devault AM, Golding GB, Waglechner N, Enk JM, Kuch M, Tien JH, et~al.
 \newblock Second-pandemic strain of Vibrio cholerae from the Philadelphia
   cholera outbreak of 1849.
-\newblock New England Journal of Medicine;370(4).
+\newblock New England Journal of Medicine. 2014;370(4):334--340.
 
 \bibitem{majander2020ancient}
 Majander K, Pfrengle S, Kocher A, Neukamm J, Du~Plessis L, Pla-D{\'\i}az M,
@@ -189,11 +189,21 @@ Nascimento FF, Reis Md, Yang Z.
 \newblock A biologist’s guide to Bayesian phylogenetic analysis.
 \newblock Nature ecology \& evolution. 2017;1(10):1446--1454.
 
+\bibitem{bouckaertDating}
+Bouckaert RR. Tree priors and dating; 2021.
+\newblock Available from:
+  \url{beast2.blogs.auckland.ac.nz/tree-priors-and-dating/}.
+
 \bibitem{rosenberg2002genealogical}
 Rosenberg NA, Nordborg M.
 \newblock Genealogical trees, coalescent theory and the analysis of genetic
   polymorphisms.
 \newblock Nature Reviews Genetics. 2002;3(5):380--390.
+
+\bibitem{bouckaert2010densitree}
+Bouckaert RR.
+\newblock DensiTree: making sense of sets of phylogenetic trees.
+\newblock Bioinformatics. 2010;26(10):1372--1373.
 
 \bibitem{menardo2019molecular}
 Menardo F, Duch{\^e}ne S, Brites D, Gagneux S.
@@ -231,5 +241,51 @@ Baele G, Lemey P, Suchard MA.
 Fan Y, Wu R, Chen MH, Kuo L, Lewis PO.
 \newblock Choosing among partition models in {B}ayesian phylogenetics.
 \newblock Molecular Biology and Evolution. 2011;28(1):523--532.
+
+\bibitem{porter2022new}
+Porter AF, Sherry N, Andersson P, Johnson SA, Duchene S, Howden BP.
+\newblock New rules for genomics-informed COVID-19 responses--lessons learned
+  from the first waves of the omicron variant in Australia.
+\newblock PLoS Genetics. 2022;18(10):e1010415.
+
+\bibitem{zhang2016total}
+Zhang C, Stadler T, Klopfstein S, Heath TA, Ronquist F.
+\newblock Total-evidence dating under the fossilized birth--death process.
+\newblock Systematic biology. 2016;65(2):228--249.
+
+\bibitem{stadler2015well}
+Stadler T, Vaughan TG, Gavryushkin A, Guindon S, K{\"u}hnert D, Leventhal GE,
+  et~al.
+\newblock How well can the exponential-growth coalescent approximate
+  constant-rate birth--death population dynamics?
+\newblock Proceedings of the Royal Society B: Biological Sciences.
+  2015;282(1806):20150420.
+
+\bibitem{volz2014sampling}
+Volz EM, Frost SD.
+\newblock Sampling through time and phylodynamic inference with coalescent and
+  birth--death models.
+\newblock Journal of The Royal Society Interface. 2014;11(101):20140945.
+
+\bibitem{featherstone2021infectious}
+Featherstone LA, Di~Giallonardo F, Holmes EC, Vaughan TG, Duch{\^e}ne S.
+\newblock Infectious disease phylodynamics with occurrence data.
+\newblock Methods in Ecology and Evolution. 2021;12(8):1498--1507.
+
+\bibitem{jukes1969evolution}
+Jukes TH, Cantor CR, et~al.
+\newblock Evolution of protein molecules.
+\newblock Mammalian protein metabolism. 1969;3(24):21--132.
+
+\bibitem{ho2015simulating}
+Ho SY, Duch{\^e}ne S, Duch{\^e}ne D.
+\newblock Simulating and detecting autocorrelation of molecular evolutionary
+  rates among lineages.
+\newblock Molecular ecology resources. 2015;15(4):688--696.
+
+\bibitem{schliep2011phangorn}
+Schliep KP.
+\newblock phangorn: phylogenetic analysis in R.
+\newblock Bioinformatics. 2011;27(4):592--593.
 
 \end{thebibliography}

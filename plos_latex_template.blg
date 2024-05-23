@@ -3,62 +3,57 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: plos_latex_template.aux
 The style file: plos2015.bst
 Database file #1: References.bib
-"{" immediately follows a field name---line 94 of file References.bib
- :   number={4},@article
- :                      {ho2011skyline,
-I'm skipping whatever remains of this entry
-Repeated entry---line 864 of file References.bib
- : @article{r2019marginal
+Repeated entry---line 208 of file References.bib
+ : @article{ho2011skyline
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1309 of file References.bib
- : @article{wang2014priors
- :                        ,
+Repeated entry---line 1245 of file References.bib
+ : @article{ho2015simulating
+ :                          ,
 I'm skipping whatever remains of this entry
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Warning--empty year in devault2014second
-You've used 41 entries,
+You've used 51 entries,
             3058 wiz_defined-function locations,
-            886 strings with 12981 characters,
-and the built_in function-call counts, 78260 in all, are:
-= -- 9939
-> -- 620
+            945 strings with 14930 characters,
+and the built_in function-call counts, 96656 in all, are:
+= -- 12309
+> -- 756
 < -- 4
-+ -- 312
-- -- 155
-* -- 6648
-:= -- 8479
-add.period$ -- 161
-call.type$ -- 41
++ -- 380
+- -- 189
+* -- 8200
+:= -- 10464
+add.period$ -- 200
+call.type$ -- 51
 change.case$ -- 2
 chr.to.int$ -- 0
-cite$ -- 42
-duplicate$ -- 6454
-empty$ -- 7432
-format.name$ -- 196
-if$ -- 18177
+cite$ -- 51
+duplicate$ -- 8055
+empty$ -- 9177
+format.name$ -- 237
+if$ -- 22463
 int.to.chr$ -- 0
-int.to.str$ -- 41
-missing$ -- 395
-newline$ -- 207
-num.names$ -- 41
-pop$ -- 621
+int.to.str$ -- 51
+missing$ -- 488
+newline$ -- 256
+num.names$ -- 51
+pop$ -- 761
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 641
+skip$ -- 778
 stack$ -- 0
-substring$ -- 15684
-swap$ -- 1041
+substring$ -- 19304
+swap$ -- 1284
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 427
-width$ -- 43
-write$ -- 451
-(There were 3 error messages)
+warning$ -- 0
+while$ -- 527
+width$ -- 53
+write$ -- 560
+(There were 2 error messages)
