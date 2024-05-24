@@ -30,6 +30,19 @@ plot_stat_density <- function(dataset,clock_model,statistic,ci_value,hide_legend
   
   data_df <- rbind(exp_data,gamma_data,lognorm_data)
   
+  if (statistic == "meanRate") {
+    x_lab = "Clock Rate"
+  }
+  else if (statistic == "treeModel.rootHeight") {
+    x_lab = "Root Height"
+  }
+  else if (statistic == "treeLength") {
+    x_lab = "Tree Length"
+  }
+  else {
+    x_lab = "Coefficient of Rate Variation"
+  }
+  
   cred_int <- ci(rbind(exp_data[statistic],gamma_data[statistic],lognorm_data[statistic]),ci=ci_value) ### convert to log 10
   #max_lim <- max(exp_data[statistic],gamma_data[statistic],lognorm_data[statistic]) ### convert to log 10
   
@@ -38,7 +51,7 @@ plot_stat_density <- function(dataset,clock_model,statistic,ci_value,hide_legend
   
   colours <- c("Exponential" = pal[1], "Gamma" = pal[2], "Lognormal" = pal[3])
   
-  density_plot <- ggplot(data_df) + xlim(cred_int$CI_low,cred_int$CI_high) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+  density_plot <- ggplot(data_df) + xlim(cred_int$CI_low,cred_int$CI_high) + ylab("Density") + xlab(x_lab) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),
                                                                                          panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) 
   #+ theme(axis.title.x=element_blank(),axis.ticks.x=element_blank())
   density_plot <- density_plot + geom_density(aes(x=!!sym(statistic),colour=Prior),show_guide=FALSE) +

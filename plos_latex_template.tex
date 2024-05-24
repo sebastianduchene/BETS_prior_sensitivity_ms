@@ -376,7 +376,7 @@ In Fig \ref{figure:heterochronous_tree_distortion} we show an example of phyloge
 	\end{center}
 \end{figure}
 
-Defining a suitable prior for the parameters of the tree prior requires careful attention. The prior on $\theta$ (or other parameters) should not favour implausibly node heights. However, understanding the interplay between the parameters of the tree prior and the resulting tree topologies and node heights is not necessarily trivial, particularly when the tree prior involves multiple parameters (e.g. the Bayesian skyride). A pragmatic solution is to include additional prior information in the form of hard bounds on the root-height or the molecular clock rate. To this end, we investigated the effect of including a uniform prior between 0.0 and 5.0 units of time for the root height, meaning that trees that are older than 5.0 units have a prior probability of 0.0. Importantly, the trees under which we generated our simulations had root heights of around 2.0 units of time, and thus the hard bound of 5.0 allows for trees that are over twice as old as the truth. 
+Defining a suitable prior for the parameters of the tree prior requires careful attention. The prior on $\theta$ (or other parameters) should not favour implausible node heights. However, understanding the interplay between the parameters of the tree prior and the resulting tree topologies and node heights is not necessarily trivial, particularly when the tree prior involves multiple parameters (e.g. the Bayesian skyride). A pragmatic solution is to include additional prior information in the form of hard bounds on the root-height or the molecular clock rate. To this end, we investigated the effect of including a uniform prior between 0.0 and 5.0 units of time for the root height, meaning that trees that are older than 5.0 units have a prior probability of 0.0. Importantly, the trees under which we generated our simulations had root heights of around 2.0 units of time, and thus the hard bound of 5.0 allows for trees that are over twice as old as the truth. 
 
 Setting hard bounds on the root height resulted in perfect classification accuracy for both, the heterochronous and isochronous simulation (Table \ref{table:heterochronous_simulations_bounded} and Fig \ref{figure:heterochronous_polygons}, and Table \ref{table:isorochronous_simulations_bounded} and Fig \ref{figure:ultrametric_polygons}, respectively). The improvement in classification for data sets with no temporal signal is likely because the hard bounds limit the tree extension phenomenon and thereby including sampling times imposes a penalty on the log marginal likelihood (see polygons in Fig \ref{figure:heterochronous_polygons}).
 
@@ -497,31 +497,7 @@ Whole genome sequencing and ancient DNA are two technologies that have dramatica
 
 \textcolor{red}{Remember to mention the book chapter where we also look at how the prior on root height is affected by the presence or absence of temporal signal. Data sets with temporal signal should see more distance between the prior and the posterior. }
 
-
-
-
-\begin{figure}[!h]
-	\begin{center}
-		\includegraphics[width=13cm]{sandbox_figures/cholera_density_plot.pdf}\newline
-		\vspace{-0.5cm}
-		\caption{\textbf{Densities of key statistics of cholera empirical data.} The clock rate, root height, tree length, and coefficient of rate variation are shown under three priors on $\theta$, exponential (red), gamma (blue), and lognormal (green).}
-	\end{center}
-\end{figure}
-\begin{figure}[!h]
-	\begin{center}
-		\includegraphics[width=13cm]{sandbox_figures/powv_density_plot.pdf}\newline
-		\vspace{-0.5cm}
-		\caption{\textbf{Densities of key statistics of \textit{Powassan virus} empirical data under.} The clock rate, root height, tree length, and coefficient of rate variation are shown under three priors on $\theta$, exponential (red), gamma (blue), and lognormal (green).}
-	\end{center}
-\end{figure}
-\begin{figure}[!h]
-	\begin{center}
-		\includegraphics[width=13cm]{sandbox_figures/treponema_density_plot.pdf}\newline
-		\vspace{-0.5cm}
-		\caption{\textbf{Densities of key statistics of treponema palladium empirical data under.} The clock rate, root height, tree length, and coefficient of rate variation are shown under three priors on $\theta$, exponential (red), gamma (blue), and lognormal (green).}
-	\end{center}
-\end{figure}
-
+Tests of temporal signal are contingent on priors producing reasonable estimates of key parameters, especially root height. It is difficult to predict the impact of the tree prior and its hyperpriors on the root height, which can lead to improper model selection. Thus, predictive prior simulations are essential when evaluating prior sensitivity. We tested three hyperpriors on $\theta$ to examine the relationship between parameters and the marginal priors. By placing bounds on the root height, we restrict the effect of tree extension. This allows sampling times, which are indistinguishable from noise when the trees are excessively long, to correctly calibrate true heterochronous trees.
 
 \section*{Materials and methods}
 \subsection*{Empirical data}
@@ -551,19 +527,28 @@ For our simulations we considered well-understood conditions to isolate the impa
 We analysed the simulated data under heterochronous and isochronous models. For the heterochronous analysis we used the correct sampling times (where the correct model was the heterochronous) or assigned the tip heights above randomly (0.0, 0.10, 0.35, or 0.50) where the isocrhonous was the true model. For the evolutionary rate (clock.rate the strict and ucld.mean for the relaxed molecular clock model) we set the default CTMC-rate reference prior and the six possible configurations of the prior on $\theta$ (Table \ref{table:prior_distros_on_Phi}, plus those with hard bounds on the root height). For the isochronous analyses we did not specify sampling times and we fixed evolutionary rate to its true value of 0.05 to ensure that the branch lengths, $\theta$ and other parameters are in the correct units. We calculated log marginal likelihoods with the same procedure as for the empirical data.
 
 \section*{Supporting information}
-
 % Include only the SI item label in the paragraph heading. Use the \nameref{label} command to cite SI items in the text.
+
 \paragraph*{S1 Fig.}
 \label{S1_Fig}
-{\bf Bold the title sentence.} Add descriptive text after the title of the item (optional).
-
+	\begin{center}
+		\includegraphics[width=13cm]{sandbox_figures/cholera_density_plot.pdf}\newline
+		\textbf{Densities of key statistics of cholera empirical data.} The clock rate, root height, tree length, and coefficient of rate variation are shown under three priors on $\theta$, exponential (red), gamma (blue), and lognormal (green).
+	\end{center}
 \paragraph*{S2 Fig.}
 \label{S2_Fig}
-{\bf Lorem ipsum.} Maecenas convallis mauris sit amet sem ultrices gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus consectetur pellentesque.
+	\begin{center}
+		\includegraphics[width=13cm]{sandbox_figures/powv_density_plot.pdf}\newline
+		\textbf{Densities of key statistics of \textit{Powassan virus} empirical data under.} The clock rate, root height, tree length, and coefficient of rate variation are shown under three priors on $\theta$, exponential (red), gamma (blue), and lognormal (green).
+	\end{center}
+\paragraph*{S3 Fig.}
+\label{S3_Fig}
+	\begin{center}
+		\includegraphics[width=13cm]{sandbox_figures/treponema_density_plot.pdf}\newline
+		\textbf{Densities of key statistics of \textit{Treponema palladium} empirical data under.} The clock rate, root height, tree length, and coefficient of rate variation are shown under three priors on $\theta$, exponential (red), gamma (blue), and lognormal (green).
+	\end{center}
 
-\paragraph*{S1 File.}
-\label{file:S1_File}
-{\bf Lorem ipsum.}  Maecenas convallis mauris sit amet sem ultrices gravida. Etiam eget sapien nibh. Sed ac ipsum eget enim egestas ullamcorper nec euismod ligula. Curabitur fringilla pulvinar lectus consectetur pellentesque.
+
 
 \section*{Acknowledgments}
 This work was supported by the Inception program [Investissement d’Avenir grant ANR-16-CONV-0005], the Australian National Health and Medical Research Council [2017284], and the Australian Research Council [FT220100629].

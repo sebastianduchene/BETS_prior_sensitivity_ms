@@ -48,7 +48,7 @@ draw_plot <- function(mle_values, set, prior, colours = c("purple", "orange"), m
   }
   points(0, 0, pch = 3, col = "darkgrey")
   text(c(-10.5, 10.5, 10.5, -10.5), 
-       c(11.5, 11.5, -11.5, -11.5), labels = colnames(mle_values))
+       c(11.5, 11.5, -11.5, -11.5), labels = c("Het/SC","Iso/SC","Iso/UCLD","Het/UCLD"))
   
   for (index in 1:10) {
     plot_polygon(mle_values, pal = colours[1], index)
@@ -120,22 +120,27 @@ dev.off()
 #gamma_mles <- mle_calculations$Marginal.Likelihood[grep(paste0(dataset,".+gamma"), mle_calculations$Name)]
 #gamma_mles <- rescale_mles(gamma_mles)
 
-pdf("iso_bounds_sims.pdf",width=6,height=8)
-par(mfrow = (c(2,1))) 
+#pdf("iso_bounds_sims.pdf",width=6,height=8)
+#par(mfrow = (c(2,1))) 
 
-set <- 3
+#set <- 3
 
-exp_mles <- mle_exp[(set*7):((set*7)+9),]
-exp_mles <- rescale_mles(exp_mles)
+#exp_mles <- mle_exp[(set*7):((set*7)+9),]
+#exp_mles <- rescale_mles(exp_mles)
 
-logn_mles <- mle_log[(set*7):((set*7)+9),]
-logn_mles <- rescale_mles(logn_mles)
+#logn_mles <- mle_log[(set*7):((set*7)+9),]
+#logn_mles <- rescale_mles(logn_mles)
 
-draw_plot(exp_mles,set,priors[1])
-draw_plot(logn_mles,set,priors[3])
-dev.off()
+#draw_plot(exp_mles,set,priors[1])
+#draw_plot(logn_mles,set,priors[3])
+#dev.off()
 
 
 #plot_polygon(gamma_mles, pal[2])
 #plot_polygon(logn_mles, pal[3], 1)
 #legend(12,-1.5, legend=c("Exponential","Gamma","Lognormal"), col=c(pal[1],pal[2],pal[3]),pch=c(1,1,1),lty=1,xpd=TRUE,cex=1,pt.cex=1.2)
+
+
+
+
+
