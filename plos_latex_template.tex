@@ -442,67 +442,23 @@ For comparison, we also simulated trees under the same priors on $\theta$ and wi
 	\end{center}
 \end{figure}
 
-%\begin{table}[!ht]
-%\begin{adjustwidth}{-2.25in}{0in}
-%\centering
-%\caption{
-%{\bf Proportion of simulations with temporal signal under heterochronous simulated data}}
-%\begin{tabular}{ | c + c | c | c | c | }
-%\hline
-%\multicolumn{1}{|c|}{\bf Species; Clock Model} & Exponential & Gamma & Lognormal \\ %\thickhline
-%\hline
-%$Vibrio$ $cholerae;$ $Strict$ $Clock$ & 10 & 10 & 10 \\ \hline
-%$Vibrio$ $cholerae;$ $Relaxed$ $Clock$ & 10 & 10 & 10 \\  \hline
-%$Vibrio$ $cholerae;$ $Best\ clock\ model$ & 10 & 10 & 10 \\  \hline
-%$Orthoflavivirus$ $powassanense;$ $Strict$ $Clock$ &  &  &  \\ \hline
-%$Orthoflavivirus$ $powassanense;$ $Relaxed$ $Clock$ &  &  &  \\  \hline
-%$Treponema$ $pallidum;$ $Strict$ $Clock$ & 0 & 0 & 0 \\ \hline
-%$Treponema$ $pallidum;$ $Relaxed$ $Clock$ & 0 & 10 & 8 \\ \hline
-%$Treponema$ $pallidum;$ $Relaxed$ $Clock$ & & & \\ \hline
-%\end{tabular}
-%\end{adjustwidth}
-%\end{table}
-
-%\begin{table}[!ht]
-%\begin{adjustwidth}{-2.25in}{0in}
-%\centering
-%\caption{
-%{\bf Proportion of simulations without temporal signal under isochronous simulated data}}
-%\begin{tabular}{ | c + c | c | c | c | }
-%\hline
-%\multicolumn{1}{|c|}{\bf Species; Clock Model} & Exponential & Gamma & Lognormal \\ %\thickhline
-%\hline
-%$Vibrio$ $cholerae;$ $Strict$ $Clock$ & 10 & 0 & 0 \\ \hline
-%$Vibrio$ $cholerae;$ $Relaxed$ $Clock$ & 0 & 0 & 0 \\  \hline
-%$Vibrio$ $cholerae;$ $Best\ clock\ model$ & 0 & 0 & 0 \\  \hline
-%Orthoflavivirus$ $powassanense;$ $Strict$ $Clock$ &  &  &  \\ \hline
-%$Orthoflavivirus$ $powassanense;$ $Relaxed$ $Clock$ &  &  &  \\  \hline
-%$Treponema$ $pallidum;$ $Strict$ $Clock$ & 10 & 10 & 10 \\ \hline
-%$Treponema$ $pallidum;$ $Relaxed$ $Clock$ & 10 &  0 &  0 \\ \hline
-%$Treponema$ $pallidum;$ $Best\ clock\ model$ & &  &  \\ \hline
-%\end{tabular}
-%\end{adjustwidth}
-%end{table}
-
 
 
 \section*{Discussion}
-
+\textcolor{red}{
 \begin{itemize}
-	\item[1] Our study demonstrates that the choice of prior has an impact in model selection, and can result in incorrectly selecting models for the purpose of detecting temporal signal and choosing molecular clocks. 
+	\item[1] Our study demonstrates that the choice of prior has an impact in model selection, and can result in incorrectly selecting models for the purpose of detecting temporal signal and choosing molecular clocks.
 	\item[2] The tree height and length are particularly important.
 		\subitem This has important implications for what we classify as a measurably evolving population, for the phylodynamic threshold, and ultimately for justifying estimates of evolutionary rates and times based on tip-calibrations only.
 		\subitem  It appears that data sets that have very clear temporal signal, with clocklike behaviour, and informative sequence data, the prior is less influential. However, BETS tends to incorrectly classify data sets with no temporal signal. This occurs due to tree extension and is most prevalent when we consider a strict clock. Tree extension simply occurs to compensate for the impact in the likelihood due to the inclusion of sampling times in truly ultrametric trees, such that the sampling times span a very small portion of the tree height and the tree is effectively ultrametric. 
 		\subitem In the absence of internal node calibrations the tree height and tree length are largely determined by the tree prior and the hyperprior on the parameters that govern it. For this reason conducting prior predictive simulations seems essential to determine whether the resulting trees have reasonable root heights, or tend to favour very old trees. A simple way to mitigate this is to include hard bounds, but in our simulations we found that an exponential prior can be sufficient. However, some data sets include very divergent sequences and we may actually do want somewhat old trees, as appears to be the case with the powassan virus data set. In its original analyses several lines of evidence support temporal signal, and here we find that the exponential tree prior did not favour it.  
-		\subitem We also find that the relaxed clock can mitigate this problem of incorrect classification, but in empirical analyses it is difficult to make the decision as to whether there is temporal signal when the clock models disagree, so we recommend prior predictive simulations. 
+		\subitem We also find that the relaxed clock can mitigate this problem of incorrect classification, but in empirical analyses it is difficult to make the decision as to whether there is temporal signal when the clock models disagree, so we recommend prior predictive simulations.
 	\item[3] What about simpler tests of temporal signal, like the root-to-tip regression, or date randomisation tests? 
 		\subitem Well... the root to tip regression is sometimes unclear (cite the BETS paper where we look at inconclusive regressions) and in the date randomisation test what we are testing is whether a particular set of sampling times produce a different estimate than others, so it can be sensitive to the number of dated samples, and may not be very useful for aDNA, where only a small number of samples are ancient. 
 		\subitem BETS is still a solid alternative because some data sets require additional information, such as uncertainty in sampling times, monophyletic constraints and root positions. For example, the treponema data analyses did this and obtained very clear temporal signal. Our results for this data set are less conclusive and may indicate that such information is very important. 
-	\item[4] Future practice should involve some sort of prior predictive simulations to elicit a prior that does not favour unreasonable node heights and even rates. Importantly, the isochronous analyses should fix the clock rate to a value within the expected order of magnitude, so that the tree prior is comparable between the isochronous and heterochronous models. Choosing a reasonable prior can be difficult for pathogens that are poorly understood. However, our simulations illustrate an extreme case, where our log-normal prior favoured trees that were many orders of magnitude older than our expectation for the simulations. Similarly, prior sensitivity analyses can also be useful, where the robustness of the posterior can be compared for a subset of priors. Our empirical data demonstrate that the most informative data set, V. cholerae was generally robust. Similar approaches of comparing prior and posterior root heights have been proposed to assess temporal signal (cite book chapter).
+	\item[4] Future practice should involve some sort of prior predictive simulations to elicit a prior that does not favour unreasonable node heights and even rates. Importantly, the isochronous analyses should fix the clock rate to a value within the expected order of magnitude, so that the tree prior is comparable between the isochronous and heterochronous models. Choosing a reasonable prior can be difficult for pathogens that are poorly understood. However, our simulations illustrate an extreme case, where our log-normal prior favoured trees that were many orders of magnitude older than our expectation for the simulations. Similarly, prior sensitivity analyses can also be useful, where the robustness of the posterior can be compared for a subset of priors. Our empirical data demonstrate that the most informative data set, \textit{V. cholerae} was generally robust. Similar approaches of comparing prior and posterior root heights have been proposed to assess temporal signal (cite book chapter).
 	\item[5] Closing remarks. Temporal signal is important for recently emerging microbes, data sets of ancient DNA, or when the evolutionary history of a pathogen is unknown. Our study provides guidelines for determining this and for improving the reliability of estimates of evolutionary rates and times.
-
-\end{itemize}
-
+\end{itemize}}
 
 \textcolor{red}{
 Whole genome sequencing and ancient DNA are two technologies that have dramatically expanded the range of organisms from which we can sample measurably evolving populations. By sequencing complete genomes, instead of individual genes, we can capture more genetic variation overall. In a microbe with an evolutionary rate of about 1$\times 10^{-7}$ subs/site/year (e.g. \textit{M. tuberculosis} \cite{menardo2019molecular}) sampled over a decade would yield on average one substitution for every 1M bases sequenced, with shorter stretches of sequences being mostly uninformative. As a result, many microbes whose evolution was considered too slow to be treated a measurably evolving populations, including many bacteria, are now commonly analysed using frameworks that were thought to be only applicable to rapidly evolving pathogens, such as RNA viruses \cite{biek2015measurably}.}
@@ -560,6 +516,44 @@ We analysed the simulated data under heterochronous and isochronous models. For 
 		\includegraphics[width=13cm]{sandbox_figures/treponema_density_plot.pdf}\newline
 		\textbf{Densities of key statistics of \textit{Treponema palladium} empirical data under.} The clock rate, root height, tree length, and coefficient of rate variation are shown under three priors on $\theta$, exponential (red), gamma (blue), and lognormal (green).
 	\end{center}
+
+\begin{table}[!ht]
+\begin{adjustwidth}{-2.25in}{0in}
+\centering
+\caption{
+{\bf Proportion of simulations with temporal signal under heterochronous simulated data}}
+\begin{tabular}{ | c + c | c | c | c | }
+\hline
+\multicolumn{1}{|c|}{\bf Species; Clock Model} & Exponential & Gamma & Lognormal \\ %\thickhline
+\hline
+$Vibrio$ $cholerae;$ $Strict$ $Clock$ & 10 & 10 & 10 \\ \hline
+$Vibrio$ $cholerae;$ $Relaxed$ $Clock$ & 10 & 10 & 10 \\  \hline
+$Vibrio$ $cholerae;$ $Best\ clock\ model$ & 10 & 10 & 10 \\  \hline
+$Treponema$ $pallidum;$ $Strict$ $Clock$ & 0 & 0 & 0 \\ \hline
+$Treponema$ $pallidum;$ $Relaxed$ $Clock$ & 0 & 10 & 8 \\ \hline
+$Treponema$ $pallidum;$ $Best\ clock\ model$ & & & \\ \hline
+\end{tabular}
+\end{adjustwidth}
+\end{table}
+
+\begin{table}[!ht]
+\begin{adjustwidth}{-2.25in}{0in}
+\centering
+\caption{
+{\bf Proportion of simulations without temporal signal under isochronous simulated data}}
+\begin{tabular}{ | c + c | c | c | c | }
+\hline
+\multicolumn{1}{|c|}{\bf Species; Clock Model} & Exponential & Gamma & Lognormal \\ %\thickhline
+\hline
+$Vibrio$ $cholerae;$ $Strict$ $Clock$ & 10 & 0 & 0 \\ \hline
+$Vibrio$ $cholerae;$ $Relaxed$ $Clock$ & 0 & 0 & 0 \\  \hline
+$Vibrio$ $cholerae;$ $Best\ clock\ model$ & 0 & 0 & 0 \\  \hline
+$Treponema$ $pallidum;$ $Strict$ $Clock$ & 10 & 10 & 10 \\ \hline
+$Treponema$ $pallidum;$ $Relaxed$ $Clock$ & 10 &  0 &  0 \\ \hline
+$Treponema$ $pallidum;$ $Best\ clock\ model$ & &  &  \\ \hline
+\end{tabular}
+\end{adjustwidth}
+\end{table}
 
 
 
