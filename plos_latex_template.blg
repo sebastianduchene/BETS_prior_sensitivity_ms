@@ -3,11 +3,11 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: plos_latex_template.aux
 The style file: plos2015.bst
 Database file #1: References.bib
-Repeated entry---line 208 of file References.bib
+Repeated entry---line 272 of file References.bib
  : @article{ho2011skyline
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1245 of file References.bib
+Repeated entry---line 1309 of file References.bib
  : @article{ho2015simulating
  :                          ,
 I'm skipping whatever remains of this entry
@@ -15,45 +15,45 @@ Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 48 entries,
+You've used 53 entries,
             3058 wiz_defined-function locations,
-            930 strings with 14473 characters,
-and the built_in function-call counts, 91314 in all, are:
-= -- 11641
-> -- 712
+            957 strings with 15398 characters,
+and the built_in function-call counts, 98240 in all, are:
+= -- 12514
+> -- 764
 < -- 4
-+ -- 358
-- -- 178
-* -- 7744
-:= -- 9878
-add.period$ -- 188
-call.type$ -- 48
++ -- 384
+- -- 191
+* -- 8305
+:= -- 10643
+add.period$ -- 207
+call.type$ -- 53
 change.case$ -- 2
 chr.to.int$ -- 0
-cite$ -- 48
-duplicate$ -- 7638
-empty$ -- 8666
-format.name$ -- 223
-if$ -- 21231
+cite$ -- 53
+duplicate$ -- 8226
+empty$ -- 9332
+format.name$ -- 239
+if$ -- 22841
 int.to.chr$ -- 0
-int.to.str$ -- 48
-missing$ -- 459
-newline$ -- 241
-num.names$ -- 48
-pop$ -- 715
+int.to.str$ -- 53
+missing$ -- 500
+newline$ -- 266
+num.names$ -- 53
+pop$ -- 786
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 737
+skip$ -- 799
 stack$ -- 0
-substring$ -- 18222
-swap$ -- 1208
+substring$ -- 19529
+swap$ -- 1317
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 495
-width$ -- 50
-write$ -- 527
+while$ -- 538
+width$ -- 55
+write$ -- 581
 (There were 2 error messages)

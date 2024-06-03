@@ -205,6 +205,35 @@ Bouckaert RR.
 \newblock DensiTree: making sense of sets of phylogenetic trees.
 \newblock Bioinformatics. 2010;26(10):1372--1373.
 
+\bibitem{bergsten2013bayesian}
+Bergsten J, Nilsson AN, Ronquist F.
+\newblock Bayesian tests of topology hypotheses with an example from diving
+  beetles.
+\newblock Systematic biology. 2013;62(5):660--673.
+
+\bibitem{sanjuan2012molecular}
+Sanju{\'a}n R.
+\newblock From molecular genetics to phylodynamics: evolutionary relevance of
+  mutation rates across viruses.
+\newblock PLoS pathogens. 2012;8(5):e1002685.
+
+\bibitem{foster2017evaluating}
+Foster CS, Sauquet H, Van~der Merwe M, McPherson H, Rossetto M, Ho SY.
+\newblock Evaluating the impact of genomic data and priors on Bayesian
+  estimates of the angiosperm evolutionary timescale.
+\newblock Systematic Biology. 2017;66(3):338--351.
+
+\bibitem{lopes2011confronting}
+Lopes HF, Tobias JL.
+\newblock Confronting prior convictions: On issues of prior sensitivity and
+  likelihood robustness in Bayesian analysis.
+\newblock Annu Rev Econ. 2011;3(1):107--131.
+
+\bibitem{lambert2018student}
+Lambert B.
+\newblock A student's guide to Bayesian statistics.
+\newblock London: SAGE Publications Ltd; 2018.
+
 \bibitem{menardo2019molecular}
 Menardo F, Duch{\^e}ne S, Brites D, Gagneux S.
 \newblock The molecular clock of Mycobacterium tuberculosis.

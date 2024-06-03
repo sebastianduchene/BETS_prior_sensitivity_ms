@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.6.1)  1 JUN 2024 21:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.6.1)  3 JUN 2024 16:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -627,7 +627,8 @@ Overfull \hbox (18.92108pt too wide) in paragraph at lines 350--352
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<sandbox_figures/tree_distortion_ultrametric.pdf, id=147, 578.16pt x 505.89pt>
+[7]
+<sandbox_figures/tree_distortion_ultrametric.pdf, id=154, 578.16pt x 505.89pt>
 File: sandbox_figures/tree_distortion_ultrametric.pdf Graphic file (type pdf)
 <use sandbox_figures/tree_distortion_ultrametric.pdf>
 Package pdftex.def Info: sandbox_figures/tree_distortion_ultrametric.pdf  used 
@@ -641,8 +642,7 @@ Overfull \hbox (47.37384pt too wide) in paragraph at lines 361--363
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[7]
-<sandbox_figures/tree_distortion_heterochronous.pdf, id=159, 578.16pt x 505.89p
+<sandbox_figures/tree_distortion_heterochronous.pdf, id=158, 578.16pt x 505.89p
 t>
 File: sandbox_figures/tree_distortion_heterochronous.pdf Graphic file (type pdf
 )
@@ -675,7 +675,7 @@ LaTeX Warning: Reference `figure:correlation_plots' on page 10 undefined on inp
 ut line 420.
 
 [10 <./sandbox_figures/tree_distortion_heterochronous.pdf>]
-<sandbox_figures/prior_predictive_plots.pdf, id=214, 433.62pt x 375.4025pt>
+<sandbox_figures/prior_predictive_plots.pdf, id=213, 433.62pt x 375.4025pt>
 File: sandbox_figures/prior_predictive_plots.pdf Graphic file (type pdf)
 <use sandbox_figures/prior_predictive_plots.pdf>
 Package pdftex.def Info: sandbox_figures/prior_predictive_plots.pdf  used on in
@@ -690,7 +690,7 @@ Overfull \hbox (38.83792pt too wide) in paragraph at lines 424--427
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [11]
-<sandbox_figures/prior_tree_distros.pdf, id=224, 361.35pt x 433.62pt>
+<sandbox_figures/prior_tree_distros.pdf, id=223, 361.35pt x 433.62pt>
 File: sandbox_figures/prior_tree_distros.pdf Graphic file (type pdf)
 <use sandbox_figures/prior_tree_distros.pdf>
 Package pdftex.def Info: sandbox_figures/prior_tree_distros.pdf  used on input 
@@ -701,26 +701,29 @@ line 438.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [12 <./sandbox_figures/prior_predictive_plots.pdf>] [13 <./sandbox_figures/prio
-r_tree_distros.pdf>] [14] [15] [16]
-<sandbox_figures/cholera_density_plot.pdf, id=299, 650.43pt x 505.89pt>
+r_tree_distros.pdf>] [14] [15]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16] [17]
+<sandbox_figures/cholera_density_plot.pdf, id=324, 650.43pt x 505.89pt>
 File: sandbox_figures/cholera_density_plot.pdf Graphic file (type pdf)
 <use sandbox_figures/cholera_density_plot.pdf>
 Package pdftex.def Info: sandbox_figures/cholera_density_plot.pdf  used on inpu
-t line 518.
+t line 524.
 (pdftex.def)             Requested size: 369.88582pt x 287.69643pt.
- [17]
-<sandbox_figures/powv_density_plot.pdf, id=315, 650.43pt x 505.89pt>
+<sandbox_figures/powv_density_plot.pdf, id=325, 650.43pt x 505.89pt>
 File: sandbox_figures/powv_density_plot.pdf Graphic file (type pdf)
 <use sandbox_figures/powv_density_plot.pdf>
 Package pdftex.def Info: sandbox_figures/powv_density_plot.pdf  used on input l
-ine 524.
+ine 530.
 (pdftex.def)             Requested size: 369.88582pt x 287.69643pt.
  [18 <./sandbox_figures/cholera_density_plot.pdf>]
-<sandbox_figures/treponema_density_plot.pdf, id=327, 650.43pt x 505.89pt>
+<sandbox_figures/treponema_density_plot.pdf, id=339, 650.43pt x 505.89pt>
 File: sandbox_figures/treponema_density_plot.pdf Graphic file (type pdf)
 <use sandbox_figures/treponema_density_plot.pdf>
 Package pdftex.def Info: sandbox_figures/treponema_density_plot.pdf  used on in
-put line 530.
+put line 536.
 (pdftex.def)             Requested size: 369.88582pt x 287.69643pt.
  [19 <./sandbox_figures/powv_density_plot.pdf>] [20 <./sandbox_figures/treponem
 a_density_plot.pdf>] (./plos_latex_template.bbl [21] [22]
@@ -728,10 +731,9 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-)
-
+ [23]) 
 AED: lastpage setting LastPage
-[23] (./plos_latex_template.aux)
+[24] (./plos_latex_template.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -742,12 +744,12 @@ Package rerunfilecheck Info: File `plos_latex_template.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 15096 strings out of 480247
- 241911 string characters out of 5896152
- 598999 words of memory out of 5000000
- 32617 multiletter control sequences out of 15000+600000
+ 15108 strings out of 478287
+ 242155 string characters out of 5849290
+ 602257 words of memory out of 5000000
+ 32876 multiletter control sequences out of 15000+600000
  477322 words of font info for 100 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
+ 1141 hyphenation exceptions out of 8191
  67i,11n,76p,1679b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
@@ -762,10 +764,10 @@ nts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on plos_latex_template.pdf (23 pages, 935352 bytes).
+Output written on plos_latex_template.pdf (24 pages, 939298 bytes).
 PDF statistics:
- 456 PDF objects out of 1000 (max. 8388607)
- 379 compressed objects within 4 object streams
- 105 named destinations out of 1000 (max. 500000)
+ 475 PDF objects out of 1000 (max. 8388607)
+ 397 compressed objects within 4 object streams
+ 111 named destinations out of 1000 (max. 500000)
  23091 words of extra memory for PDF output out of 24883 (max. 10000000)
 
