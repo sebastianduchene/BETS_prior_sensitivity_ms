@@ -234,15 +234,11 @@ Lambert B.
 \newblock A student's guide to Bayesian statistics.
 \newblock London: SAGE Publications Ltd; 2018.
 
-\bibitem{menardo2019molecular}
-Menardo F, Duch{\^e}ne S, Brites D, Gagneux S.
-\newblock The molecular clock of Mycobacterium tuberculosis.
-\newblock PLoS pathogens. 2019;15(9):e1008067.
-
-\bibitem{biek2015measurably}
-Biek R, Pybus OG, Lloyd-Smith JO, Didelot X.
-\newblock Measurably evolving pathogens in the genomic era.
-\newblock Trends in ecology \& evolution. 2015;30(6):306--313.
+\bibitem{duchene2020temporal}
+Duchene S, Featherstone L, Haritopoulou-Sinanidou M, Rambaut A, Lemey P, Baele
+  G.
+\newblock Temporal signal and the phylodynamic threshold of {SARS-CoV-2}.
+\newblock Virus Evolution. 2020;6(2):veaa061.
 
 \bibitem{baele2016genealogical}
 Baele G, Lemey P, Suchard MA.
