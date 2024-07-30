@@ -7,7 +7,7 @@ Repeated entry---line 351 of file References.bib
  : @article{ho2011skyline
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1388 of file References.bib
+Repeated entry---line 1393 of file References.bib
  : @article{ho2015simulating
  :                          ,
 I'm skipping whatever remains of this entry
@@ -17,43 +17,43 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 You've used 58 entries,
             3058 wiz_defined-function locations,
-            985 strings with 16430 characters,
-and the built_in function-call counts, 107247 in all, are:
-= -- 13708
+            988 strings with 16560 characters,
+and the built_in function-call counts, 107360 in all, are:
+= -- 13730
 > -- 824
 < -- 5
 + -- 414
 - -- 206
-* -- 9038
-:= -- 11595
-add.period$ -- 227
+* -- 9043
+:= -- 11603
+add.period$ -- 228
 call.type$ -- 58
 change.case$ -- 2
 chr.to.int$ -- 0
 cite$ -- 58
-duplicate$ -- 9108
-empty$ -- 10170
+duplicate$ -- 9134
+empty$ -- 10175
 format.name$ -- 258
-if$ -- 24965
+if$ -- 24998
 int.to.chr$ -- 0
 int.to.str$ -- 58
 missing$ -- 544
-newline$ -- 291
+newline$ -- 292
 num.names$ -- 58
 pop$ -- 858
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 877
+skip$ -- 883
 stack$ -- 0
-substring$ -- 21197
-swap$ -- 1440
+substring$ -- 21199
+swap$ -- 1444
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 586
+while$ -- 584
 width$ -- 60
-write$ -- 636
+write$ -- 638
 (There were 2 error messages)

@@ -55,9 +55,10 @@ Rambaut A, Lam TT, Max~Carvalho L, Pybus OG.
 
 \bibitem{featherstone2023clockor2}
 Featherstone LA, Rambaut A, Duchene S, Wirth W.
-\newblock Clockor2: Inferring global and local strict molecular clocks using
-  root-to-tip regression.
-\newblock BioRxiv. 2023; p. 2023--07.
+\newblock {Clockor2: Inferring Global and Local Strict Molecular Clocks Using
+  Root-to-Tip Regression}.
+\newblock Systematic Biology. 2024; p. syae003.
+\newblock doi:{10.1093/sysbio/syae003}.
 
 \bibitem{volz2017scalable}
 Volz E, Frost SD.
