@@ -42,6 +42,11 @@ Drummond AJ, Pybus OG, Rambaut A, Forsberg R, Rodrigo AG.
 \newblock Measurably evolving populations.
 \newblock Trends in ecology \& evolution. 2003;18(9):481--488.
 
+\bibitem{biek2015measurably}
+Biek R, Pybus OG, Lloyd-Smith JO, Didelot X.
+\newblock Measurably evolving pathogens in the genomic era.
+\newblock Trends in ecology \& evolution. 2015;30(6):306--313.
+
 \bibitem{rambaut2016exploring}
 Rambaut A, Lam TT, Max~Carvalho L, Pybus OG.
 \newblock Exploring the temporal structure of heterochronous sequences using
@@ -124,6 +129,12 @@ Suchard MA, Lemey P, Baele G, Ayres DL, Drummond AJ, Rambaut A.
   1.10.
 \newblock Virus Evolution. 2018;4(1):vey016.
 
+\bibitem{boskova2014inference}
+Boskova V, Bonhoeffer S, Stadler T.
+\newblock Inference of epidemiological dynamics based on simulated phylogenies
+  using birth-death and coalescent models.
+\newblock PLoS Computational Biology. 2014;10(11):e1003913.
+
 \bibitem{drummond2002estimating}
 Drummond AJ, Nicholls GK, Rodrigo AG, Solomon W.
 \newblock Estimating mutation parameters, population history and genealogy
@@ -178,6 +189,18 @@ Ho SY, Shapiro B.
   nucleotide sequences.
 \newblock Molecular ecology resources. 2011;11(3):423--434.
 
+\bibitem{volz2012complex}
+Volz EM.
+\newblock Complex population dynamics and the coalescent under neutrality.
+\newblock Genetics. 2012;190(1):187--201.
+
+\bibitem{dearlove2013coalescent}
+Dearlove B, Wilson DJ.
+\newblock Coalescent inference for infectious disease: meta-analysis of
+  hepatitis C.
+\newblock Philosophical Transactions of the Royal Society B: Biological
+  Sciences. 2013;368(1614):20120314.
+
 \bibitem{wesner2021choosing}
 Wesner JS, Pomeranz JP.
 \newblock Choosing priors in Bayesian ecological models by simulating from the
@@ -205,17 +228,17 @@ Bouckaert RR.
 \newblock DensiTree: making sense of sets of phylogenetic trees.
 \newblock Bioinformatics. 2010;26(10):1372--1373.
 
-\bibitem{bergsten2013bayesian}
-Bergsten J, Nilsson AN, Ronquist F.
-\newblock Bayesian tests of topology hypotheses with an example from diving
-  beetles.
-\newblock Systematic biology. 2013;62(5):660--673.
-
 \bibitem{sanjuan2012molecular}
 Sanju{\'a}n R.
 \newblock From molecular genetics to phylodynamics: evolutionary relevance of
   mutation rates across viruses.
 \newblock PLoS pathogens. 2012;8(5):e1002685.
+
+\bibitem{bergsten2013bayesian}
+Bergsten J, Nilsson AN, Ronquist F.
+\newblock Bayesian tests of topology hypotheses with an example from diving
+  beetles.
+\newblock Systematic biology. 2013;62(5):660--673.
 
 \bibitem{foster2017evaluating}
 Foster CS, Sauquet H, Van~der Merwe M, McPherson H, Rossetto M, Ho SY.
@@ -233,6 +256,12 @@ Lopes HF, Tobias JL.
 Lambert B.
 \newblock A student's guide to Bayesian statistics.
 \newblock London: SAGE Publications Ltd; 2018.
+
+\bibitem{duchene2020estimating}
+Duchene S, Duchene DA.
+\newblock Estimating evolutionary rates and timescales from time-stamped data.
+\newblock The Molecular Evolutionary Clock: Theory and Practice. 2020; p.
+  157--174.
 
 \bibitem{duchene2020temporal}
 Duchene S, Featherstone L, Haritopoulou-Sinanidou M, Rambaut A, Lemey P, Baele
