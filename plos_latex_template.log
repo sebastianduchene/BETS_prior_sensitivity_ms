@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.6.1)  31 JUL 2024 11:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.6.1)  31 JUL 2024 11:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -751,8 +751,8 @@ Package rerunfilecheck Info: File `plos_latex_template.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 15145 strings out of 478287
- 243290 string characters out of 5849290
+ 15146 strings out of 478287
+ 243301 string characters out of 5849290
  595375 words of memory out of 5000000
  32899 multiletter control sequences out of 15000+600000
  477277 words of font info for 101 fonts, out of 8000000 for 9000
@@ -771,10 +771,10 @@ nts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on plos_latex_template.pdf (24 pages, 948781 bytes).
+Output written on plos_latex_template.pdf (24 pages, 949901 bytes).
 PDF statistics:
- 517 PDF objects out of 1000 (max. 8388607)
- 434 compressed objects within 5 object streams
- 121 named destinations out of 1000 (max. 500000)
+ 519 PDF objects out of 1000 (max. 8388607)
+ 436 compressed objects within 5 object streams
+ 122 named destinations out of 1000 (max. 500000)
  23101 words of extra memory for PDF output out of 24883 (max. 10000000)
 
