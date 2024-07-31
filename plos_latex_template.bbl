@@ -89,6 +89,12 @@ Duch{\^e}ne S, Duch{\^e}ne D, Holmes EC, Ho SY.
   analyses of time-structured virus data.
 \newblock Molecular Biology and Evolution. 2015;32(7):1895--1906.
 
+\bibitem{murray2016effect}
+Murray GG, Wang F, Harrison EM, Paterson GK, Mather AE, Harris SR, et~al.
+\newblock The effect of genetic structure on molecular dating and tests for
+  temporal signal.
+\newblock Methods in Ecology and Evolution. 2016;7(1):80--89.
+
 \bibitem{duchene2020bayesian}
 Duchene S, Lemey P, Stadler T, Ho SY, Duchene DA, Dhanasekaran V, et~al.
 \newblock Bayesian evaluation of temporal signal in measurably evolving
@@ -101,6 +107,17 @@ Molak M, Suchard MA, Ho SY, Beilman DW, Shapiro B.
   radiocarbon-date and calibration error into B ayesian phylogenetic analyses
   of ancient DNA.
 \newblock Molecular ecology resources. 2015;15(1):81--86.
+
+\bibitem{spyrou2019ancient}
+Spyrou MA, Bos KI, Herbig A, Krause J.
+\newblock Ancient pathogen genomics as an emerging tool for infectious disease
+  research.
+\newblock Nature Reviews Genetics. 2019;20(6):323--340.
+
+\bibitem{duchene2020recovery}
+Duch{\^e}ne S, Ho SY, Carmichael AG, Holmes EC, Poinar H.
+\newblock The recovery, interpretation and use of ancient pathogen genomes.
+\newblock Current Biology. 2020;30(19):R1215--R1231.
 
 \bibitem{gelman1995avoiding}
 Gelman A, Rubin DB.
