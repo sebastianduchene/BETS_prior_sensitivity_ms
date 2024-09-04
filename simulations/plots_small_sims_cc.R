@@ -33,7 +33,7 @@ plot_polygon <- function(mle_values, pal, index){
   #points(, col = pal, cex=1)
 }
 
-draw_plot <- function(mle_values, set, prior, colours = c("red", "green"), main = "main title"){
+draw_plot <- function(mle_values, set, prior, colours = c("purple", "orange"), main = "main title"){
   par(mar = c(3, 2, 4, 2.5), pty="s")
   plot(0, 0, ylim = c(-13, 13), xlim = c(-13, 13), type = "n", bty = "n", 
        yaxt = "n", xaxt = "n", ylab = "", xlab = "", main = main)
@@ -102,7 +102,7 @@ draw_plot(logn_mles1,set[1],priors[3], main = "Heterochronous, lognormal prior")
 draw_plot(gamma_mles1,set[1],priors[2], main = "Heterochronous, gamma prior")
 draw_plot(exp_mles3,set[2],priors[1], main = "Isochronous, exponential prior")
 draw_plot(logn_mles3,set[2],priors[3], main = "Isochronous, lognormal prior")
-legend(-16.5,-17, legend=c("Bounds on rootheight","No bounds on rootheight"), col=c("red", "green"),
+legend(-16.5,-17, legend=c("Bounds on rootheight","No bounds on rootheight"), col=c("purple", "orange"),
        pch=c(1,1),lty=1,xpd=TRUE,cex=1,pt.cex=0, horiz = TRUE,bty = "n",text.width=c(13,8),seg.len=1.5)
 draw_plot(gamma_mles3,set[2],priors[2], main = "Isochronous, gamma prior")
 dev.off()
