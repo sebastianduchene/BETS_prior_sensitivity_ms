@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.6.1)  20 SEP 2024 13:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.6.1)  20 SEP 2024 13:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**plos_latex_template.tex
-(./plos_latex_template.tex
+**plos_latex_template_clean.tex
+(./plos_latex_template_clean.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -455,8 +455,8 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count301
 \l__pdf_internal_box=\box59
 )
-(./plos_latex_template.aux)
-\openout1 = `plos_latex_template.aux'.
+(./plos_latex_template_clean.aux)
+\openout1 = `plos_latex_template_clean.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 172.
 LaTeX Font Info:    ... okay on input line 172.
@@ -515,9 +515,9 @@ Package hyperref Info: Link coloring OFF on input line 172.
 LaTeX Info: Redefining \ref on input line 172.
 LaTeX Info: Redefining \pageref on input line 172.
 LaTeX Info: Redefining \nameref on input line 172.
-(./plos_latex_template.out) (./plos_latex_template.out)
+(./plos_latex_template_clean.out) (./plos_latex_template_clean.out)
 \@outlinefile=\write3
-\openout3 = `plos_latex_template.out'.
+\openout3 = `plos_latex_template_clean.out'.
 
 LaTeX Info: Redefining \microtypecontext on input line 172.
 Package microtype Info: Applying patch `item' on input line 172.
@@ -655,8 +655,8 @@ Overfull \hbox (14.85527pt too wide) in paragraph at lines 376--386
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[11 <./sandbox_figures/tree_distortion_heterochronous.pdf>] [12]
-<sandbox_figures/prior_predictive_plots.pdf, id=254, 433.62pt x 375.4025pt>
+[11 <./sandbox_figures/tree_distortion_heterochronous.pdf>]
+<sandbox_figures/prior_predictive_plots.pdf, id=243, 433.62pt x 375.4025pt>
 File: sandbox_figures/prior_predictive_plots.pdf Graphic file (type pdf)
 <use sandbox_figures/prior_predictive_plots.pdf>
 Package pdftex.def Info: sandbox_figures/prior_predictive_plots.pdf  used on in
@@ -667,7 +667,10 @@ Overfull \hbox (38.83792pt too wide) in paragraph at lines 400--403
  []  
  []
 
-[13 <./sandbox_figures/prior_predictive_plots.pdf>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12] [13 <./sandbox_figures/prior_predictive_plots.pdf>]
 <sandbox_figures/prior_tree_distros.pdf, id=273, 361.35pt x 433.62pt>
 File: sandbox_figures/prior_tree_distros.pdf Graphic file (type pdf)
 <use sandbox_figures/prior_tree_distros.pdf>
@@ -730,21 +733,22 @@ Overfull \hbox (18.92108pt too wide) in paragraph at lines 505--507
  []
 
 [22 <./sandbox_figures/coalescent_exponential_sims.pdf>]
-(./plos_latex_template.bbl [23 <./sandbox_figures/tree_extension_likelihood.pdf
->] [24] [25] [26] [27]) 
+(./plos_latex_template_clean.bbl [23 <./sandbox_figures/tree_extension_likeliho
+od.pdf>] [24] [25] [26] [27]) 
 AED: lastpage setting LastPage
-[28] (./plos_latex_template.aux)
-Package rerunfilecheck Info: File `plos_latex_template.out' has not changed.
+[28] (./plos_latex_template_clean.aux)
+Package rerunfilecheck Info: File `plos_latex_template_clean.out' has not chang
+ed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
  15175 strings out of 478287
- 243922 string characters out of 5849290
- 592721 words of memory out of 5000000
+ 244048 string characters out of 5849290
+ 592727 words of memory out of 5000000
  32912 multiletter control sequences out of 15000+600000
  477433 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,12n,76p,2058b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,12n,76p,2034b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
@@ -758,7 +762,7 @@ nts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on plos_latex_template.pdf (28 pages, 1215816 bytes).
+Output written on plos_latex_template_clean.pdf (28 pages, 1214214 bytes).
 PDF statistics:
  577 PDF objects out of 1000 (max. 8388607)
  490 compressed objects within 5 object streams
